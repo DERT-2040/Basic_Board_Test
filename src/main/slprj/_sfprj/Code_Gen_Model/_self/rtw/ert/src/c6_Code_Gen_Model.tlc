@@ -1,0 +1,88 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   10 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "timer"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "timer"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c6_Code_Gen_Model"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c6_Code_Gen_Model"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Center"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Center"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Path_to_Reef"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Center.Path_to_Reef"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Left_and_Right"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Left_and_Right"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Path_to_Reef_1"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Left_and_Right.Path_to_Reef_1"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Drive"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Left_and_Right.Path_to_Reef_1.Drive"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Path_to_Reef_2"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Left_and_Right.Path_to_Reef_2"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Path_to_Reef_2_v2"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Left_and_Right.Path_to_Reef_2_v2"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

@@ -1,0 +1,207 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   27 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "timer"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "timer"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Set_L1"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Set_L1"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Set_L2"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Set_L2"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Set_L3"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Set_L3"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Set_L4"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Set_L4"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "timer_robot_target"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "timer_robot_target"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c5_Code_Gen_Model"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Elevator_CoralArm_CoralWheel"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Algae_Pickup_High"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Algae_Pickup_High"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Algae_Pickup_Low"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Algae_Pickup_Low"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Algae_Score"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Algae_Score"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Coral"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Coral_Eject"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral.Coral_Eject"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Level_2"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral.Coral_Eject.Level_2"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Level_3"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral.Coral_Eject.Level_3"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Level_4_Auto"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral.Coral_Eject.Level_4_Auto"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Level_4_Teleop"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral.Coral_Eject.Level_4_Teleop"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Coral_Score_Position"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral.Coral_Score_Position"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Actions"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral_Pickup.Actions"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Coral_Pickup_Prepare"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral_Pickup.Actions.Coral_Pickup_Prepare"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Set_Level"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Coral_Pickup.Set_Level"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Elevator_Height_Bottom"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Elevator_Height_Bottom"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Elevator_Height_Bottom_pre"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Elevator_Height_Bottom_pre"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_End_Game_Climb"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.End_Game_Climb"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Set_Level"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Elevator_CoralArm_CoralWheel.Start.Set_Level"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Algae_Wheels"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Algae_Wheels"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_AT_On_Target_Timer"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "AT_On_Target_Timer"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

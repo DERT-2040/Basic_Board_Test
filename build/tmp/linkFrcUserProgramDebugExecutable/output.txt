@@ -1,0 +1,4 @@
+See file:///C:/GitHub/Basic_Board_Test/build/tmp/linkFrcUserProgramDebugExecutable/output.txt for all output for linkFrcUserProgramDebugExecutable.
+linking frcUserProgram successful.
+
+Finished linkFrcUserProgramDebugExecutable, see full log file:///C:/GitHub/Basic_Board_Test/build/tmp/linkFrcUserProgramDebugExecutable/output.txt.

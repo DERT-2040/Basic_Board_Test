@@ -1,0 +1,465 @@
+[
+  {
+    "name": "linuxathena",
+    "architecture": "arm-v7",
+    "operatingSystem": "linux",
+    "flavor": "default",
+    "buildType": "debug",
+    "cppPath": "C:\\Users\\Public\\wpilib\\2025\\roborio\\bin\\arm-frc2025-linux-gnueabi-g++.exe",
+    "cPath": "C:\\Users\\Public\\wpilib\\2025\\roborio\\bin\\arm-frc2025-linux-gnueabi-gcc.exe",
+    "msvc": false,
+    "gcc": true,
+    "systemCppMacros": [],
+    "systemCppArgs": [],
+    "systemCMacros": [],
+    "systemCArgs": [],
+    "allLibFiles": [
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4175a37f44e85b5e11c349404a3e9f08\\transformed\\wpilibNewCommands-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\19ee307f03a91e9741557d3290bf92e0\\transformed\\PlayingWithFusion-cpp-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\973597e08d802744fdf2b995cfee0a92\\transformed\\PlayingWithFusion-driver-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c552c550304613d9c82e45ee75547814\\transformed\\REVLib-cpp-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\90b7596520a1dc877581f5ac6f4f4c6c\\transformed\\REVLib-driver-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\f975165e1ed81534dbddbe78d3d831b6\\transformed\\wpiapi-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\e6797955f6c9ba39197ff23d720a8811\\transformed\\api-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\92fac8f2b4f79fb890b840af7fb10cdd\\transformed\\cci-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\66514a03a08cfb931f81fc6bf0a9c39d\\transformed\\wpiapi-cpp-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4d3d7509f7d975ad1ec6ca1452acd8cd\\transformed\\tools-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\20780af83e47ccb279c333858e5ced5b\\transformed\\wpilibc-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c685076a5a90fe15f8d101203d338e4c\\transformed\\ntcore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\09de7d2259ee61397631dff0262c1da2\\transformed\\hal-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c873c9c24bb025460a00184641422083\\transformed\\wpimath-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\1a4f0d042b462406da35cb4fd68af32f\\transformed\\wpinet-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\62bb489cb0272b9b59669115837b494c\\transformed\\wpiutil-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\eb2534a7cb36167630625ac14b70f2d9\\transformed\\netcomm-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\ce6a1fff1524304d8a156f61d8cf4f9d\\transformed\\chipobject-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\8bf0385ce6fa61266f890d6904e092d0\\transformed\\visa-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\517eef227a2db3e1cf8930992f8bfd67\\transformed\\cameraserver-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\682392b1bf5997b162ce1c1170d6afeb\\transformed\\cscore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\5d70515e9c5b66948c6c9e0238334269\\transformed\\apriltag-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\11ee94202269565b95b9d160cb3ec449\\transformed\\opencv-cpp-4.10.0-3-headers\\",
+      "C:\\GitHub\\Basic_Board_Test\\src\\main\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\b1ae91c88341442dee3f32f040a6b61e\\transformed\\wpilibNewCommands-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\abd0ab33a0ac5cfb5fc5fd9e595eebff\\transformed\\wpilibc-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\d082891e5920a4fa8c19cf615c54fabc\\transformed\\ntcore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4e45c1bf6c6fa082eac47ec7aa44b85b\\transformed\\hal-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\700df1a183e017863431a2c8054f75a1\\transformed\\wpimath-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\08a766f971d4e98265a6b5e91bcd2104\\transformed\\wpinet-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\fe810c1555ae8af0673d861b83031a8b\\transformed\\wpiutil-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\67ba1cc701254b8978866dfd9f850c9a\\transformed\\cameraserver-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\362f07e8953376d63ce8124c49d7d4f9\\transformed\\cscore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\af3f55221e8001ec8f58f4b89c0e33e8\\transformed\\apriltag-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\96ae1c366606a485ae5d10cd228bd7f5\\transformed\\opencv-cpp-4.10.0-3-sources\\"
+    ],
+    "allLibSources": [
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\b1ae91c88341442dee3f32f040a6b61e\\transformed\\wpilibNewCommands-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\abd0ab33a0ac5cfb5fc5fd9e595eebff\\transformed\\wpilibc-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\d082891e5920a4fa8c19cf615c54fabc\\transformed\\ntcore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4e45c1bf6c6fa082eac47ec7aa44b85b\\transformed\\hal-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\700df1a183e017863431a2c8054f75a1\\transformed\\wpimath-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\08a766f971d4e98265a6b5e91bcd2104\\transformed\\wpinet-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\fe810c1555ae8af0673d861b83031a8b\\transformed\\wpiutil-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\67ba1cc701254b8978866dfd9f850c9a\\transformed\\cameraserver-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\362f07e8953376d63ce8124c49d7d4f9\\transformed\\cscore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\af3f55221e8001ec8f58f4b89c0e33e8\\transformed\\apriltag-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\96ae1c366606a485ae5d10cd228bd7f5\\transformed\\opencv-cpp-4.10.0-3-sources\\"
+    ],
+    "allLibHeaders": [
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4175a37f44e85b5e11c349404a3e9f08\\transformed\\wpilibNewCommands-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\19ee307f03a91e9741557d3290bf92e0\\transformed\\PlayingWithFusion-cpp-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\973597e08d802744fdf2b995cfee0a92\\transformed\\PlayingWithFusion-driver-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c552c550304613d9c82e45ee75547814\\transformed\\REVLib-cpp-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\90b7596520a1dc877581f5ac6f4f4c6c\\transformed\\REVLib-driver-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\f975165e1ed81534dbddbe78d3d831b6\\transformed\\wpiapi-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\e6797955f6c9ba39197ff23d720a8811\\transformed\\api-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\92fac8f2b4f79fb890b840af7fb10cdd\\transformed\\cci-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\66514a03a08cfb931f81fc6bf0a9c39d\\transformed\\wpiapi-cpp-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4d3d7509f7d975ad1ec6ca1452acd8cd\\transformed\\tools-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\20780af83e47ccb279c333858e5ced5b\\transformed\\wpilibc-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c685076a5a90fe15f8d101203d338e4c\\transformed\\ntcore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\09de7d2259ee61397631dff0262c1da2\\transformed\\hal-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c873c9c24bb025460a00184641422083\\transformed\\wpimath-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\1a4f0d042b462406da35cb4fd68af32f\\transformed\\wpinet-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\62bb489cb0272b9b59669115837b494c\\transformed\\wpiutil-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\eb2534a7cb36167630625ac14b70f2d9\\transformed\\netcomm-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\ce6a1fff1524304d8a156f61d8cf4f9d\\transformed\\chipobject-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\8bf0385ce6fa61266f890d6904e092d0\\transformed\\visa-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\517eef227a2db3e1cf8930992f8bfd67\\transformed\\cameraserver-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\682392b1bf5997b162ce1c1170d6afeb\\transformed\\cscore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\5d70515e9c5b66948c6c9e0238334269\\transformed\\apriltag-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\11ee94202269565b95b9d160cb3ec449\\transformed\\opencv-cpp-4.10.0-3-headers\\",
+      "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+    ],
+    "binaries": [
+      {
+        "componentName": "frcUserProgram",
+        "sourceSets": [
+          {
+            "source": {
+              "srcDirs": [
+                "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+              ],
+              "includes": [
+                "**/*.cpp",
+                "**/*.cc",
+                "**/*.c"
+              ],
+              "excludes": []
+            },
+            "exportedHeaders": {
+              "srcDirs": [
+                "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+              ],
+              "includes": [
+                "**/*.h",
+                "**/*.hh"
+              ],
+              "excludes": []
+            },
+            "cpp": true,
+            "args": [
+              "-Wall",
+              "-Wextra",
+              "-std=c++20",
+              "-Wformat=2",
+              "-pedantic",
+              "-Wno-psabi",
+              "-Wno-unused-parameter",
+              "-Wno-error=deprecated-enum-enum-conversion",
+              "-fPIC",
+              "-pthread",
+              "-Og",
+              "-g"
+            ],
+            "macros": []
+          }
+        ],
+        "libHeaders": [
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4175a37f44e85b5e11c349404a3e9f08\\transformed\\wpilibNewCommands-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\19ee307f03a91e9741557d3290bf92e0\\transformed\\PlayingWithFusion-cpp-2025.01.04-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\973597e08d802744fdf2b995cfee0a92\\transformed\\PlayingWithFusion-driver-2025.01.04-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c552c550304613d9c82e45ee75547814\\transformed\\REVLib-cpp-2025.0.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\90b7596520a1dc877581f5ac6f4f4c6c\\transformed\\REVLib-driver-2025.0.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\f975165e1ed81534dbddbe78d3d831b6\\transformed\\wpiapi-cpp-5.35.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\e6797955f6c9ba39197ff23d720a8811\\transformed\\api-cpp-5.35.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\92fac8f2b4f79fb890b840af7fb10cdd\\transformed\\cci-5.35.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\66514a03a08cfb931f81fc6bf0a9c39d\\transformed\\wpiapi-cpp-25.3.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4d3d7509f7d975ad1ec6ca1452acd8cd\\transformed\\tools-25.3.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\20780af83e47ccb279c333858e5ced5b\\transformed\\wpilibc-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c685076a5a90fe15f8d101203d338e4c\\transformed\\ntcore-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\09de7d2259ee61397631dff0262c1da2\\transformed\\hal-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c873c9c24bb025460a00184641422083\\transformed\\wpimath-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\1a4f0d042b462406da35cb4fd68af32f\\transformed\\wpinet-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\62bb489cb0272b9b59669115837b494c\\transformed\\wpiutil-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\eb2534a7cb36167630625ac14b70f2d9\\transformed\\netcomm-2025.2.0-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\ce6a1fff1524304d8a156f61d8cf4f9d\\transformed\\chipobject-2025.2.0-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\8bf0385ce6fa61266f890d6904e092d0\\transformed\\visa-2025.2.0-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\517eef227a2db3e1cf8930992f8bfd67\\transformed\\cameraserver-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\682392b1bf5997b162ce1c1170d6afeb\\transformed\\cscore-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\5d70515e9c5b66948c6c9e0238334269\\transformed\\apriltag-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\11ee94202269565b95b9d160cb3ec449\\transformed\\opencv-cpp-4.10.0-3-headers\\",
+          "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+        ],
+        "sharedLibrary": false,
+        "executable": true
+      }
+    ],
+    "sourceBinaries": [
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+          ],
+          "includes": [
+            "**/*.cpp",
+            "**/*.cc",
+            "**/*.c"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-Wall",
+          "-Wextra",
+          "-std=c++20",
+          "-Wformat=2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-Wno-unused-parameter",
+          "-Wno-error=deprecated-enum-enum-conversion",
+          "-fPIC",
+          "-pthread",
+          "-Og",
+          "-g"
+        ],
+        "macros": [],
+        "sharedLibrary": false,
+        "executable": true
+      },
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+          ],
+          "includes": [
+            "**/*.h",
+            "**/*.hh"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-Wall",
+          "-Wextra",
+          "-std=c++20",
+          "-Wformat=2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-Wno-unused-parameter",
+          "-Wno-error=deprecated-enum-enum-conversion",
+          "-fPIC",
+          "-pthread",
+          "-Og",
+          "-g"
+        ],
+        "macros": [],
+        "sharedLibrary": false,
+        "executable": true
+      }
+    ],
+    "nameBinaryMap": {
+      "frcUserProgram": 0
+    }
+  },
+  {
+    "name": "linuxathena",
+    "architecture": "arm-v7",
+    "operatingSystem": "linux",
+    "flavor": "default",
+    "buildType": "release",
+    "cppPath": "C:\\Users\\Public\\wpilib\\2025\\roborio\\bin\\arm-frc2025-linux-gnueabi-g++.exe",
+    "cPath": "C:\\Users\\Public\\wpilib\\2025\\roborio\\bin\\arm-frc2025-linux-gnueabi-gcc.exe",
+    "msvc": false,
+    "gcc": true,
+    "systemCppMacros": [],
+    "systemCppArgs": [],
+    "systemCMacros": [],
+    "systemCArgs": [],
+    "allLibFiles": [
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4175a37f44e85b5e11c349404a3e9f08\\transformed\\wpilibNewCommands-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\19ee307f03a91e9741557d3290bf92e0\\transformed\\PlayingWithFusion-cpp-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\973597e08d802744fdf2b995cfee0a92\\transformed\\PlayingWithFusion-driver-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c552c550304613d9c82e45ee75547814\\transformed\\REVLib-cpp-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\90b7596520a1dc877581f5ac6f4f4c6c\\transformed\\REVLib-driver-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\f975165e1ed81534dbddbe78d3d831b6\\transformed\\wpiapi-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\e6797955f6c9ba39197ff23d720a8811\\transformed\\api-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\92fac8f2b4f79fb890b840af7fb10cdd\\transformed\\cci-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\66514a03a08cfb931f81fc6bf0a9c39d\\transformed\\wpiapi-cpp-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4d3d7509f7d975ad1ec6ca1452acd8cd\\transformed\\tools-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\20780af83e47ccb279c333858e5ced5b\\transformed\\wpilibc-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c685076a5a90fe15f8d101203d338e4c\\transformed\\ntcore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\09de7d2259ee61397631dff0262c1da2\\transformed\\hal-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c873c9c24bb025460a00184641422083\\transformed\\wpimath-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\1a4f0d042b462406da35cb4fd68af32f\\transformed\\wpinet-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\62bb489cb0272b9b59669115837b494c\\transformed\\wpiutil-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\eb2534a7cb36167630625ac14b70f2d9\\transformed\\netcomm-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\ce6a1fff1524304d8a156f61d8cf4f9d\\transformed\\chipobject-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\8bf0385ce6fa61266f890d6904e092d0\\transformed\\visa-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\517eef227a2db3e1cf8930992f8bfd67\\transformed\\cameraserver-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\682392b1bf5997b162ce1c1170d6afeb\\transformed\\cscore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\5d70515e9c5b66948c6c9e0238334269\\transformed\\apriltag-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\11ee94202269565b95b9d160cb3ec449\\transformed\\opencv-cpp-4.10.0-3-headers\\",
+      "C:\\GitHub\\Basic_Board_Test\\src\\main\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\b1ae91c88341442dee3f32f040a6b61e\\transformed\\wpilibNewCommands-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\abd0ab33a0ac5cfb5fc5fd9e595eebff\\transformed\\wpilibc-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\d082891e5920a4fa8c19cf615c54fabc\\transformed\\ntcore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4e45c1bf6c6fa082eac47ec7aa44b85b\\transformed\\hal-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\700df1a183e017863431a2c8054f75a1\\transformed\\wpimath-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\08a766f971d4e98265a6b5e91bcd2104\\transformed\\wpinet-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\fe810c1555ae8af0673d861b83031a8b\\transformed\\wpiutil-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\67ba1cc701254b8978866dfd9f850c9a\\transformed\\cameraserver-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\362f07e8953376d63ce8124c49d7d4f9\\transformed\\cscore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\af3f55221e8001ec8f58f4b89c0e33e8\\transformed\\apriltag-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\96ae1c366606a485ae5d10cd228bd7f5\\transformed\\opencv-cpp-4.10.0-3-sources\\"
+    ],
+    "allLibSources": [
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\b1ae91c88341442dee3f32f040a6b61e\\transformed\\wpilibNewCommands-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\abd0ab33a0ac5cfb5fc5fd9e595eebff\\transformed\\wpilibc-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\d082891e5920a4fa8c19cf615c54fabc\\transformed\\ntcore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4e45c1bf6c6fa082eac47ec7aa44b85b\\transformed\\hal-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\700df1a183e017863431a2c8054f75a1\\transformed\\wpimath-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\08a766f971d4e98265a6b5e91bcd2104\\transformed\\wpinet-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\fe810c1555ae8af0673d861b83031a8b\\transformed\\wpiutil-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\67ba1cc701254b8978866dfd9f850c9a\\transformed\\cameraserver-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\362f07e8953376d63ce8124c49d7d4f9\\transformed\\cscore-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\af3f55221e8001ec8f58f4b89c0e33e8\\transformed\\apriltag-cpp-2025.2.1-sources\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\96ae1c366606a485ae5d10cd228bd7f5\\transformed\\opencv-cpp-4.10.0-3-sources\\"
+    ],
+    "allLibHeaders": [
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4175a37f44e85b5e11c349404a3e9f08\\transformed\\wpilibNewCommands-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\19ee307f03a91e9741557d3290bf92e0\\transformed\\PlayingWithFusion-cpp-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\973597e08d802744fdf2b995cfee0a92\\transformed\\PlayingWithFusion-driver-2025.01.04-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c552c550304613d9c82e45ee75547814\\transformed\\REVLib-cpp-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\90b7596520a1dc877581f5ac6f4f4c6c\\transformed\\REVLib-driver-2025.0.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\f975165e1ed81534dbddbe78d3d831b6\\transformed\\wpiapi-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\e6797955f6c9ba39197ff23d720a8811\\transformed\\api-cpp-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\92fac8f2b4f79fb890b840af7fb10cdd\\transformed\\cci-5.35.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\66514a03a08cfb931f81fc6bf0a9c39d\\transformed\\wpiapi-cpp-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4d3d7509f7d975ad1ec6ca1452acd8cd\\transformed\\tools-25.3.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\20780af83e47ccb279c333858e5ced5b\\transformed\\wpilibc-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c685076a5a90fe15f8d101203d338e4c\\transformed\\ntcore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\09de7d2259ee61397631dff0262c1da2\\transformed\\hal-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c873c9c24bb025460a00184641422083\\transformed\\wpimath-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\1a4f0d042b462406da35cb4fd68af32f\\transformed\\wpinet-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\62bb489cb0272b9b59669115837b494c\\transformed\\wpiutil-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\eb2534a7cb36167630625ac14b70f2d9\\transformed\\netcomm-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\ce6a1fff1524304d8a156f61d8cf4f9d\\transformed\\chipobject-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\8bf0385ce6fa61266f890d6904e092d0\\transformed\\visa-2025.2.0-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\517eef227a2db3e1cf8930992f8bfd67\\transformed\\cameraserver-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\682392b1bf5997b162ce1c1170d6afeb\\transformed\\cscore-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\5d70515e9c5b66948c6c9e0238334269\\transformed\\apriltag-cpp-2025.2.1-headers\\",
+      "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\11ee94202269565b95b9d160cb3ec449\\transformed\\opencv-cpp-4.10.0-3-headers\\",
+      "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+    ],
+    "binaries": [
+      {
+        "componentName": "frcUserProgram",
+        "sourceSets": [
+          {
+            "source": {
+              "srcDirs": [
+                "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+              ],
+              "includes": [
+                "**/*.cpp",
+                "**/*.cc",
+                "**/*.c"
+              ],
+              "excludes": []
+            },
+            "exportedHeaders": {
+              "srcDirs": [
+                "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+              ],
+              "includes": [
+                "**/*.h",
+                "**/*.hh"
+              ],
+              "excludes": []
+            },
+            "cpp": true,
+            "args": [
+              "-Wall",
+              "-Wextra",
+              "-std=c++20",
+              "-Wformat=2",
+              "-pedantic",
+              "-Wno-psabi",
+              "-Wno-unused-parameter",
+              "-Wno-error=deprecated-enum-enum-conversion",
+              "-fPIC",
+              "-pthread",
+              "-O2"
+            ],
+            "macros": []
+          }
+        ],
+        "libHeaders": [
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4175a37f44e85b5e11c349404a3e9f08\\transformed\\wpilibNewCommands-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\19ee307f03a91e9741557d3290bf92e0\\transformed\\PlayingWithFusion-cpp-2025.01.04-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\973597e08d802744fdf2b995cfee0a92\\transformed\\PlayingWithFusion-driver-2025.01.04-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c552c550304613d9c82e45ee75547814\\transformed\\REVLib-cpp-2025.0.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\90b7596520a1dc877581f5ac6f4f4c6c\\transformed\\REVLib-driver-2025.0.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\f975165e1ed81534dbddbe78d3d831b6\\transformed\\wpiapi-cpp-5.35.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\e6797955f6c9ba39197ff23d720a8811\\transformed\\api-cpp-5.35.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\92fac8f2b4f79fb890b840af7fb10cdd\\transformed\\cci-5.35.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\66514a03a08cfb931f81fc6bf0a9c39d\\transformed\\wpiapi-cpp-25.3.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\4d3d7509f7d975ad1ec6ca1452acd8cd\\transformed\\tools-25.3.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\20780af83e47ccb279c333858e5ced5b\\transformed\\wpilibc-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c685076a5a90fe15f8d101203d338e4c\\transformed\\ntcore-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\09de7d2259ee61397631dff0262c1da2\\transformed\\hal-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\c873c9c24bb025460a00184641422083\\transformed\\wpimath-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\1a4f0d042b462406da35cb4fd68af32f\\transformed\\wpinet-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\62bb489cb0272b9b59669115837b494c\\transformed\\wpiutil-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\eb2534a7cb36167630625ac14b70f2d9\\transformed\\netcomm-2025.2.0-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\ce6a1fff1524304d8a156f61d8cf4f9d\\transformed\\chipobject-2025.2.0-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\8bf0385ce6fa61266f890d6904e092d0\\transformed\\visa-2025.2.0-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\517eef227a2db3e1cf8930992f8bfd67\\transformed\\cameraserver-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\682392b1bf5997b162ce1c1170d6afeb\\transformed\\cscore-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\5d70515e9c5b66948c6c9e0238334269\\transformed\\apriltag-cpp-2025.2.1-headers\\",
+          "C:\\Users\\ander\\.gradle\\caches\\8.11\\transforms\\11ee94202269565b95b9d160cb3ec449\\transformed\\opencv-cpp-4.10.0-3-headers\\",
+          "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+        ],
+        "sharedLibrary": false,
+        "executable": true
+      }
+    ],
+    "sourceBinaries": [
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+          ],
+          "includes": [
+            "**/*.cpp",
+            "**/*.cc",
+            "**/*.c"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-Wall",
+          "-Wextra",
+          "-std=c++20",
+          "-Wformat=2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-Wno-unused-parameter",
+          "-Wno-error=deprecated-enum-enum-conversion",
+          "-fPIC",
+          "-pthread",
+          "-O2"
+        ],
+        "macros": [],
+        "sharedLibrary": false,
+        "executable": true
+      },
+      {
+        "source": {
+          "srcDirs": [
+            "C:\\GitHub\\Basic_Board_Test\\src\\main\\"
+          ],
+          "includes": [
+            "**/*.h",
+            "**/*.hh"
+          ],
+          "excludes": []
+        },
+        "componentName": "frcUserProgram",
+        "cpp": true,
+        "args": [
+          "-Wall",
+          "-Wextra",
+          "-std=c++20",
+          "-Wformat=2",
+          "-pedantic",
+          "-Wno-psabi",
+          "-Wno-unused-parameter",
+          "-Wno-error=deprecated-enum-enum-conversion",
+          "-fPIC",
+          "-pthread",
+          "-O2"
+        ],
+        "macros": [],
+        "sharedLibrary": false,
+        "executable": true
+      }
+    ],
+    "nameBinaryMap": {
+      "frcUserProgram": 0
+    }
+  }
+]

@@ -8,7 +8,7 @@
 //  For each component there is a .cpp file in the 'cpp' folder.
 //  For each component there is a .hh file in the 'include' folder
 
-void Robot::RobotInit()
+Robot::Robot()
 {
   Code_Gen_Model_U.GameState = -1;
   Code_Gen_Model_initialize(); //code gen model init

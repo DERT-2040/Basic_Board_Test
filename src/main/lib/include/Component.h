@@ -15,20 +15,20 @@ public:
     /**
      * Component specific callback that runs before the simulink step function
      */
-    virtual void PreStepCallback();
+    virtual void PreStepCallback() = 0;
 
     /**
      * Component specific callback that runs after the simulink step function
      */
-    virtual void PostStepCallback();
+    virtual void PostStepCallback() = 0;
 
     /**
      * Component specific callback that pushes data to smart dashboard
      */
-    virtual void SmartDashboardCallback();
+    virtual void SmartDashboardCallback() = 0;
 
     /**
      * Component specific callback that is called when the gamestate changes
      */
-    virtual void GameStateChangeCallback();
+    virtual void GameStateChangeCallback() = 0;
 };

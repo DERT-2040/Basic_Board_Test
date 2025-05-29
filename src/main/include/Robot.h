@@ -20,7 +20,7 @@ class Robot : public frc::TimedRobot {
   /**
    * Runs once when robot turns on
    */
-  void RobotInit() override;
+  Robot();
 
   /**
    * Runs every 20ms regardless of what mode the robot is in

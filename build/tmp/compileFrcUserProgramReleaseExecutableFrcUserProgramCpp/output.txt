@@ -1,19 +1,21 @@
 See file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
 compiling rtGetInf.c successful.
 
+compiling rt_nonfinite.c successful.
+
+compiling Inputs_Outputs.cpp successful.
+
+compiling SimulinkSmartDashboardInterface.cpp successful.
+
+compiling rtGetNaN.c successful.
+
 compiling Code_Gen_Model.c successful.
 
 compiling Component.cpp successful.
 
-compiling rtGetNaN.c successful.
-
-compiling SimulinkSmartDashboardInterface.cpp successful.
-
-compiling rt_nonfinite.c successful.
+compiling Robot.cpp successful.
 
 compiling Chooser.cpp successful.
-
-compiling Robot.cpp successful.
 
 compiling NeoSpark.cpp successful.
 

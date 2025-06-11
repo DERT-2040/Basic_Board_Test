@@ -16,7 +16,6 @@ struct NeoSparkCreateInfo
     double secondaryCurrentLimit = 15;
     double openLoopRampRate = 0.00000001;
     //sensor
-    bool includeSensor;
     double* setDutyCycleCallback = nullptr;
     double* getVelocityCallback = nullptr;
     double* getPositionCallback = nullptr;
@@ -42,17 +41,19 @@ class NeoSpark
 {
 public:
     NeoSpark(NeoSparkCreateInfo createInfo);
-    NeoSpark(int canID, bool includeSensor);
-    NeoSpark(NeoSparkCreateInfo createInfo, int canID, bool isReversed);
     NeoSpark(NeoSpark&& other) noexcept;
 
     void getPositionCallback();
     void getVelocityCallback();
     void setDutyCycleCallback();
-
+    void setBrakeModeWhenIdle(bool isBrakeMode);
+    void setDutyCycle(double DC);
+    void stopMotor();
+    
     rev::spark::SparkMax sparkMax;
     std::optional<rev::spark::SparkRelativeEncoder> sparkRelEncoder;
     NeoSparkCreateInfo finalCreateInfo{};
 private:
     void initalizeSpark(NeoSparkCreateInfo createInfo);
+    
 };

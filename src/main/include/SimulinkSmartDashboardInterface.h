@@ -12,20 +12,25 @@ class SimulinkSmartDashboardInterface : public Component
 {
 public:
     SimulinkSmartDashboardInterface();
-    void PreStepCallback();
-    void PostStepCallback();
-    void SmartDashboardCallback();
-    void GameStateChangeCallback();
+    void PreStepCallback() override ;
+    void PostStepCallback() override;
 private:
         // Parameters
         nt::NetworkTableEntry __Auto_Signal_one__Entry;
         nt::NetworkTableEntry __Auto_Signal_two__Entry;
+        nt::NetworkTableEntry __Dist_to_MtrSpd_Gain__Entry;
         nt::NetworkTableEntry __Teleop_Signal_one__Entry;
         nt::NetworkTableEntry __Teleop_Signal_two__Entry;
  
         // Inports
+        nt::NetworkTableEntry __Distance_Sensor__Entry;
         nt::NetworkTableEntry __GameState__Entry;
+        nt::NetworkTableEntry __LimitSwitch_FwdRev__Entry;
+        nt::NetworkTableEntry __LimitSwitch_OnOff__Entry;
+        nt::NetworkTableEntry __Motor_Revs__Entry;
+        nt::NetworkTableEntry __Motor_Velocity__Entry;
         // Outports
+        nt::NetworkTableEntry __Motor_DutyCycle__Entry;
         nt::NetworkTableEntry __Signal_one__Entry;
         nt::NetworkTableEntry __Signal_two__Entry;
  

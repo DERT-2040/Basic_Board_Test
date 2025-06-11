@@ -53,6 +53,10 @@ public:
     void getPositionCallback();
     void getVelocityCallback();
     void setDutyCycleCallback();
+    void setDutyCycle(double DC);
+    void setBrakeMode(bool isBrakeMode);
+    void stopMotor();
+
     ctre::phoenix6::hardware::TalonFX talonController;
     ctre::phoenix6::controls::DutyCycleOut dutyCycleControl;
     KrakenTalonCreateInfo finalCreateInfo{};

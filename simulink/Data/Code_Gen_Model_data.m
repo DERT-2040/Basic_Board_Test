@@ -13,6 +13,9 @@ Auto_Signal_two = 60;
 Teleop_Signal_one = 10;
 Teleop_Signal_two = 20;
 
+% Motor control
+Dist_to_MtrSpd_Gain = 1/200;  % duty cycle / mm
+
 
 
 

@@ -58,3 +58,18 @@ void KrakenTalon::setDutyCycleCallback()
 {
     talonController.SetControl(dutyCycleControl.WithOutput(*finalCreateInfo.setDutyCycleCallback));
 }
+
+void KrakenTalon::setDutyCycle(double DC)
+{
+    talonController.SetControl(dutyCycleControl.WithOutput(DC));
+}
+
+void KrakenTalon::setBrakeMode(bool isBrakeMode)
+{
+    dutyCycleControl.WithOverrideBrakeDurNeutral(isBrakeMode);
+}
+
+void KrakenTalon::stopMotor()
+{
+    talonController.StopMotor();
+}

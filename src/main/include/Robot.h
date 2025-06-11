@@ -8,7 +8,6 @@
 #include "Code_Gen_Model_ert_rtw\Code_Gen_Model.h"
 #include "lib/include/Component.h"
 #include "include/SimulinkSmartDashboardInterface.h"
-#include "Inputs_Outputs.h"
 
 // For each component also add content in this file at the bottom of the private area
 
@@ -55,9 +54,6 @@ private:
    /** Monitor code execution time */
   frc::Tracer m_Tracer{};
 
-  /** Inputs and Outputs */
-  Inputs_Outputs m_Inputs_Outputs; 
-  
   /** Component for all Tunable Parameters created by simulink */
   SimulinkSmartDashboardInterface m_SimulinkSmartDashboardInterface;  
   

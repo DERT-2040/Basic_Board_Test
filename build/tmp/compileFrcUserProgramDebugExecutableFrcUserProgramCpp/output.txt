@@ -13,9 +13,9 @@ compiling NeoSpark.cpp successful.
 
 compiling SimulinkSmartDashboardInterface.cpp successful.
 
-compiling Chooser.cpp successful.
-
 compiling NeoSet.cpp successful.
+
+compiling Chooser.cpp successful.
 
 compiling Robot.cpp successful.
 

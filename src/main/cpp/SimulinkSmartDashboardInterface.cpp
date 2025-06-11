@@ -39,9 +39,7 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
  
 void SimulinkSmartDashboardInterface::PreStepCallback() {}
  
-void SimulinkSmartDashboardInterface::PostStepCallback() {}
- 
-void SimulinkSmartDashboardInterface::SmartDashboardCallback()
+void SimulinkSmartDashboardInterface::PostStepCallback()
 {
     // Inports
     __GameState__Entry.SetDouble(Code_Gen_Model_U.GameState);
@@ -55,4 +53,5 @@ void SimulinkSmartDashboardInterface::SmartDashboardCallback()
     __Teleop_Signal_one__Entry.SetDouble(Teleop_Signal_one);
     __Teleop_Signal_two__Entry.SetDouble(Teleop_Signal_two);
 }
-void SimulinkSmartDashboardInterface::GameStateChangeCallback() {}
+// Why are you reading to the bottom of an autogen file?
+// Get a life...

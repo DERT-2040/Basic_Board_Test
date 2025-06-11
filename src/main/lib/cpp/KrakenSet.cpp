@@ -13,7 +13,7 @@ void KrakenSet::stop()
 {
     for(auto& motor : motorSet)
     {
-        motor->talonController.StopMotor();
+        motor->stopMotor();
     }
 }
 
@@ -21,7 +21,7 @@ void KrakenSet::set(double dutyCycle)
 {
     for(auto& motor : motorSet)
     {
-        motor->talonController.SetControl(motor->dutyCycleControl.WithOutput(*motor->finalCreateInfo.setDutyCycleCallback));
+        motor->setDutyCycle(dutyCycle);
     }
 }
 
@@ -29,7 +29,7 @@ void KrakenSet::setBrakeModeWhenIdle(bool isBrakeMode)
 {
     for(auto& motor : motorSet)
     {
-        motor->dutyCycleControl.WithOverrideBrakeDurNeutral(isBrakeMode);
+        motor->setBrakeMode(isBrakeMode);
     }
 }
 

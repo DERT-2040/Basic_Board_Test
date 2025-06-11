@@ -31,7 +31,7 @@ void Chooser::InitChooser(std::string ChooserName, std::vector<std::pair<std::st
         m_chooser.AddOption(chooserMap.at(pos).first, chooserMap.at(pos).first);
     }
 
-    frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+    frc::SmartDashboard::PutData(ChooserName, &m_chooser);
 }
 
 /**

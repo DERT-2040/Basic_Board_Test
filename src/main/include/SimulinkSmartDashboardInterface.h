@@ -12,10 +12,8 @@ class SimulinkSmartDashboardInterface : public Component
 {
 public:
     SimulinkSmartDashboardInterface();
-    void PreStepCallback();
-    void PostStepCallback();
-    void SmartDashboardCallback();
-    void GameStateChangeCallback();
+    void PreStepCallback() override ;
+    void PostStepCallback() override;
 private:
         // Parameters
         nt::NetworkTableEntry __Auto_Signal_one__Entry;

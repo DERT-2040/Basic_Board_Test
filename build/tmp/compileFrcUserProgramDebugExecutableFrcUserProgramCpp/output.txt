@@ -1,26 +1,35 @@
-See file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling rt_nonfinite.c successful.
-
-compiling rtGetNaN.c successful.
-
+See file:///C:/Users/Blank/Documents/DERT2040/GithubRepos/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
 compiling rtGetInf.c successful.
 
 compiling Code_Gen_Model.c successful.
 
+compiling rtGetNaN.c successful.
+
+compiling rt_nonfinite.c successful.
+
 compiling Component.cpp successful.
+
+compiling Input_Output.cpp failed.
+C:\Users\Blank\Documents\DERT2040\GithubRepos\Basic_Board_Test\src\main\cpp\Input_Output.cpp: In member function 'virtual void Input_Output::PreStepCallback()':
+C:\Users\Blank\Documents\DERT2040\GithubRepos\Basic_Board_Test\src\main\cpp\Input_Output.cpp:7:22: error: 'struct ExtU_Code_Gen_Model_T' has no member named 'Limit_Switch_Motor_OnOff'
+    7 |     Code_Gen_Model_U.Limit_Switch_Motor_OnOff = limitSwitchMotorOnOff.Get();
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Blank\Documents\DERT2040\GithubRepos\Basic_Board_Test\src\main\cpp\Input_Output.cpp:9:22: error: 'struct ExtU_Code_Gen_Model_T' has no member named 'Limit_Switch_Motor_FwdRev'
+    9 |     Code_Gen_Model_U.Limit_Switch_Motor_FwdRev = limitSwitchMotorFwdRev.Get();
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~
 
 compiling NeoSpark.cpp successful.
 
-compiling SimulinkSmartDashboardInterface.cpp successful.
-
 compiling NeoSet.cpp successful.
+
+compiling SimulinkSmartDashboardInterface.cpp successful.
 
 compiling Chooser.cpp successful.
 
 compiling Robot.cpp successful.
 
-compiling KrakenTalon.cpp successful.
-
 compiling KrakenSet.cpp successful.
 
-Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
+compiling KrakenTalon.cpp successful.
+
+Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/Blank/Documents/DERT2040/GithubRepos/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.

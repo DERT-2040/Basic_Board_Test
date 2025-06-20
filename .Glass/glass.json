@@ -1,6 +1,6 @@
 {
   "NetworkTables": {
-    "Retained Values": {
+    "Transitory Values": {
       "open": false
     },
     "transitory": {
@@ -18,11 +18,6 @@
   "NetworkTables Info": {
     "Connections": {
       "open": true
-    },
-    "Server": {
-      "Publishers": {
-        "open": true
-      }
     },
     "glass@1": {
       "open": true

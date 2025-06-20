@@ -6,20 +6,6 @@ NeoSpark::NeoSpark(NeoSparkCreateInfo createInfo)
     initalizeSpark(createInfo);
 }
 
-NeoSpark::NeoSpark(int canID, bool includeSensor)
-: sparkMax{canID, rev::spark::SparkMax::MotorType::kBrushless}
-{
-    finalCreateInfo.includeSensor = includeSensor;
-    initalizeSpark(finalCreateInfo);
-}
-
-NeoSpark::NeoSpark(NeoSparkCreateInfo createInfo, int canID, bool isReversed)
-: sparkMax{canID, createInfo.motorType}
-{
-    createInfo.isReversed = isReversed;
-    initalizeSpark(createInfo);
-}
-
 void NeoSpark::initalizeSpark(NeoSparkCreateInfo createInfo)
 {
     rev::spark::SparkMaxConfig config{};
@@ -31,7 +17,7 @@ void NeoSpark::initalizeSpark(NeoSparkCreateInfo createInfo)
     sparkMax.Configure(config,
                        rev::spark::SparkBase::ResetMode::kResetSafeParameters,
                        rev::spark::SparkBase::PersistMode::kNoPersistParameters);
-    if(createInfo.includeSensor)
+    if(createInfo.getVelocityCallback != nullptr || createInfo.getPositionCallback != nullptr)
         sparkRelEncoder = sparkMax.GetEncoder();
     finalCreateInfo = createInfo;
 }
@@ -49,4 +35,23 @@ void NeoSpark::getVelocityCallback()
 void NeoSpark::setDutyCycleCallback()
 {
     sparkMax.Set(*finalCreateInfo.setDutyCycleCallback);
+}
+
+void NeoSpark::setBrakeModeWhenIdle(bool isBrakeMode)
+{
+    rev::spark::SparkMaxConfig config{};
+    config.SetIdleMode((isBrakeMode) ?  rev::spark::SparkBaseConfig::IdleMode::kBrake :  rev::spark::SparkBaseConfig::IdleMode::kCoast );
+    sparkMax.Configure(config,
+                       rev::spark::SparkBase::ResetMode::kNoResetSafeParameters,
+                       rev::spark::SparkBase::PersistMode::kNoPersistParameters);
+}
+
+void NeoSpark::setDutyCycle(double DC)
+{
+    sparkMax.Set(DC);
+}
+
+void NeoSpark::stopMotor()
+{
+    sparkMax.StopMotor();
 }

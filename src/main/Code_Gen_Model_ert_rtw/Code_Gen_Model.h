@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.399
+ * Model version                  : 2.400
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May  8 19:46:55 2025
+ * C/C++ source code generated on : Thu Jul  3 19:38:37 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -39,11 +39,14 @@
 /* External inputs (root inport signals with default storage) */
 typedef struct {
   real_T GameState;                    /* '<Root>/GameState' */
+  real_T Limit_Switch_Motor_OnOff;     /* '<Root>/Limit_Switch_Motor_OnOff' */
+  real_T Limit_Switch_Motor_FwdRev;    /* '<Root>/Limit_Switch_Motor_FwdRev' */
+  real_T TOF_Distance;                 /* '<Root>/TOF_Distance' */
 } ExtU_Code_Gen_Model_T;
 
 /* External outputs (root outports fed by signals with default storage) */
 typedef struct {
-  real_T Signal_one;                   /* '<Root>/Signal_one' */
+  real_T Motor_DutyCycle;              /* '<Root>/Motor_DutyCycle' */
   real_T Signal_two;                   /* '<Root>/Signal_two' */
 } ExtY_Code_Gen_Model_T;
 
@@ -66,17 +69,14 @@ extern ExtY_Code_Gen_Model_T Code_Gen_Model_Y;
  * these parameters and exports their symbols.
  *
  */
-extern real_T Auto_Signal_one;         /* Variable: Auto_Signal_one
-                                        * Referenced by: '<S7>/Constant'
-                                        */
 extern real_T Auto_Signal_two;         /* Variable: Auto_Signal_two
                                         * Referenced by: '<S7>/Constant1'
                                         */
 extern real_T Teleop_Signal_one;       /* Variable: Teleop_Signal_one
-                                        * Referenced by: '<S8>/Constant'
+                                        * Referenced by: '<S10>/Constant'
                                         */
 extern real_T Teleop_Signal_two;       /* Variable: Teleop_Signal_two
-                                        * Referenced by: '<S8>/Constant1'
+                                        * Referenced by: '<S10>/Constant1'
                                         */
 
 /* Model entry point functions */
@@ -109,7 +109,9 @@ extern RT_MODEL_Code_Gen_Model_T *const Code_Gen_Model_M;
  * '<S5>'   : 'Code_Gen_Model/RoboRio Controls/Teleop'
  * '<S6>'   : 'Code_Gen_Model/RoboRio Controls/Test'
  * '<S7>'   : 'Code_Gen_Model/RoboRio Controls/Autonomous/Autonomous_sub'
- * '<S8>'   : 'Code_Gen_Model/RoboRio Controls/Teleop/Teleop_sub'
+ * '<S8>'   : 'Code_Gen_Model/RoboRio Controls/Autonomous/Autonomous_sub/Compare To Zero'
+ * '<S9>'   : 'Code_Gen_Model/RoboRio Controls/Autonomous/Autonomous_sub/Compare To Zero1'
+ * '<S10>'  : 'Code_Gen_Model/RoboRio Controls/Teleop/Teleop_sub'
  */
 #endif                                 /* RTW_HEADER_Code_Gen_Model_h_ */
 

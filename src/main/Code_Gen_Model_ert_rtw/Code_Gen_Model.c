@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.399
+ * Model version                  : 2.400
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May  8 19:46:55 2025
+ * C/C++ source code generated on : Thu Jul  3 19:38:37 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -23,17 +23,14 @@
 #include "rtwtypes.h"
 
 /* Exported block parameters */
-real_T Auto_Signal_one = 50.0;         /* Variable: Auto_Signal_one
-                                        * Referenced by: '<S7>/Constant'
-                                        */
 real_T Auto_Signal_two = 60.0;         /* Variable: Auto_Signal_two
                                         * Referenced by: '<S7>/Constant1'
                                         */
 real_T Teleop_Signal_one = 10.0;       /* Variable: Teleop_Signal_one
-                                        * Referenced by: '<S8>/Constant'
+                                        * Referenced by: '<S10>/Constant'
                                         */
 real_T Teleop_Signal_two = 20.0;       /* Variable: Teleop_Signal_two
-                                        * Referenced by: '<S8>/Constant1'
+                                        * Referenced by: '<S10>/Constant1'
                                         */
 
 /* External inputs (root inport signals with default storage) */
@@ -67,11 +64,11 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Disabled' incorporates:
      *  ActionPort: '<S3>/Action Port'
      */
-    /* Outport: '<Root>/Signal_one' incorporates:
+    /* Outport: '<Root>/Motor_DutyCycle' incorporates:
      *  Constant: '<S3>/Constant'
-     *  SignalConversion generated from: '<S3>/Signal_one'
+     *  SignalConversion generated from: '<S3>/Motor_DutyCycle'
      */
-    Code_Gen_Model_Y.Signal_one = 0.0;
+    Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
 
     /* Outport: '<Root>/Signal_two' incorporates:
      *  Constant: '<S3>/Constant1'
@@ -86,11 +83,44 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Autonomous' incorporates:
      *  ActionPort: '<S2>/Action Port'
      */
-    /* Outport: '<Root>/Signal_one' incorporates:
-     *  Constant: '<S7>/Constant'
-     *  SignalConversion generated from: '<S2>/Signal_one'
+    /* Switch: '<S7>/Switch' incorporates:
+     *  Constant: '<S8>/Constant'
+     *  Inport: '<Root>/Limit_Switch_Motor_OnOff'
+     *  RelationalOperator: '<S8>/Compare'
      */
-    Code_Gen_Model_Y.Signal_one = Auto_Signal_one;
+    if (Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) {
+      /* Switch: '<S7>/Switch1' incorporates:
+       *  Constant: '<S9>/Constant'
+       *  Inport: '<Root>/Limit_Switch_Motor_FwdRev'
+       *  RelationalOperator: '<S9>/Compare'
+       */
+      if (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0) {
+        /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+         *  Constant: '<S7>/Constant'
+         *  Inport: '<Root>/TOF_Distance'
+         *  Product: '<S7>/Divide'
+         *  UnaryMinus: '<S7>/Unary Minus'
+         */
+        Code_Gen_Model_Y.Motor_DutyCycle = -(Code_Gen_Model_U.TOF_Distance /
+          300.0);
+      } else {
+        /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+         *  Constant: '<S7>/Constant'
+         *  Inport: '<Root>/TOF_Distance'
+         *  Product: '<S7>/Divide'
+         */
+        Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance / 300.0;
+      }
+
+      /* End of Switch: '<S7>/Switch1' */
+    } else {
+      /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+       *  Constant: '<S7>/Constant3'
+       */
+      Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+    }
+
+    /* End of Switch: '<S7>/Switch' */
 
     /* Outport: '<Root>/Signal_two' incorporates:
      *  Constant: '<S7>/Constant1'
@@ -105,14 +135,14 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Teleop' incorporates:
      *  ActionPort: '<S5>/Action Port'
      */
-    /* Outport: '<Root>/Signal_one' incorporates:
-     *  Constant: '<S8>/Constant'
-     *  SignalConversion generated from: '<S5>/Signal_one'
+    /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+     *  Constant: '<S10>/Constant'
+     *  SignalConversion generated from: '<S5>/Motor_DutyCycle'
      */
-    Code_Gen_Model_Y.Signal_one = Teleop_Signal_one;
+    Code_Gen_Model_Y.Motor_DutyCycle = Teleop_Signal_one;
 
     /* Outport: '<Root>/Signal_two' incorporates:
-     *  Constant: '<S8>/Constant1'
+     *  Constant: '<S10>/Constant1'
      *  SignalConversion generated from: '<S5>/Signal_two'
      */
     Code_Gen_Model_Y.Signal_two = Teleop_Signal_two;
@@ -124,11 +154,11 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Test' incorporates:
      *  ActionPort: '<S6>/Action Port'
      */
-    /* Outport: '<Root>/Signal_one' incorporates:
+    /* Outport: '<Root>/Motor_DutyCycle' incorporates:
      *  Constant: '<S6>/Constant'
-     *  SignalConversion generated from: '<S6>/Signal_one'
+     *  SignalConversion generated from: '<S6>/Motor_DutyCycle'
      */
-    Code_Gen_Model_Y.Signal_one = 0.0;
+    Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
 
     /* Outport: '<Root>/Signal_two' incorporates:
      *  Constant: '<S6>/Constant1'

@@ -6,9 +6,12 @@ void Input_Output::PreStepCallback()
 	// Limit Switches
     Code_Gen_Model_U.Limit_Switch_Motor_On_Off = LimitSwitchMotorOnOff.Get();
     Code_Gen_Model_U.Limit_Switch_Motor_FWD_REV = LimitSwitchMotorFWDREV.Get();
+    // Time of Flight sensors
+    Code_Gen_Model_U.TOF_Distance = distanceTimeOfFlightSensor.GetRange();
 }
 
 void Input_Output::PostStepCallback()
 {
-	
+	//Neo Spark Max motor commands
+    boardNeoSet.pullCommands();
 }

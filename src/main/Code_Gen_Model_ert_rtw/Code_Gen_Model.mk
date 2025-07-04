@@ -2,7 +2,7 @@
 ## Makefile generated for component 'Code_Gen_Model'. 
 ## 
 ## Makefile     : Code_Gen_Model.mk
-## Generated on : Thu May 01 19:58:02 2025
+## Generated on : Thu Jul 03 19:38:47 2025
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Code_Gen_Model.exe
 ## Product type : executable
 ## 
@@ -23,7 +23,7 @@ MAKEFILE                  = Code_Gen_Model.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2023b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2023b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/GitHub/Basic_Board_Test/src/main
+START_DIR                 = C:/Users/FIRSTMentor/Documents/Github/Basic_Board_Test/src/main
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

@@ -11,10 +11,6 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
     auto NTtable_Outport = NTinst.GetTable("Simulink Top Level Ports");
     auto NTtable_TPoint = NTinst.GetTable("Simulink Test Points");
  
-    __Auto_Signal_one__Entry = NTtable_Tune->GetEntry("Auto_Signal_one");
-    NTinst.AddListener(__Auto_Signal_one__Entry, nt::EventFlags::kValueAll, [] (const nt::Event& event) {Auto_Signal_one = event.GetValueEventData()->value.GetDouble();});
-    __Auto_Signal_one__Entry.SetDouble(50);
- 
     __Auto_Signal_two__Entry = NTtable_Tune->GetEntry("Auto_Signal_two");
     NTinst.AddListener(__Auto_Signal_two__Entry, nt::EventFlags::kValueAll, [] (const nt::Event& event) {Auto_Signal_two = event.GetValueEventData()->value.GetDouble();});
     __Auto_Signal_two__Entry.SetDouble(60);
@@ -29,9 +25,12 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
  
 // Inports
     __GameState__Entry = NTtable_Inport->GetEntry("GameState");
+    __Limit_Switch_Motor_FWD_REV__Entry = NTtable_Inport->GetEntry("Limit_Switch_Motor_FWD_REV");
+    __Limit_Switch_Motor_On_Off__Entry = NTtable_Inport->GetEntry("Limit_Switch_Motor_On_Off");
+    __TOF_Distance__Entry = NTtable_Inport->GetEntry("TOF_Distance");
  
 // Outports
-    __Signal_one__Entry = NTtable_Outport->GetEntry("Signal_one");
+    __Motor_DutyCycle__Entry = NTtable_Outport->GetEntry("Motor_DutyCycle");
     __Signal_two__Entry = NTtable_Outport->GetEntry("Signal_two");
  
 // Test Points
@@ -43,12 +42,14 @@ void SimulinkSmartDashboardInterface::PostStepCallback()
 {
     // Inports
     __GameState__Entry.SetDouble(Code_Gen_Model_U.GameState);
+    __Limit_Switch_Motor_FWD_REV__Entry.SetDouble(Code_Gen_Model_U.Limit_Switch_Motor_FWD_REV);
+    __Limit_Switch_Motor_On_Off__Entry.SetDouble(Code_Gen_Model_U.Limit_Switch_Motor_On_Off);
+    __TOF_Distance__Entry.SetDouble(Code_Gen_Model_U.TOF_Distance);
     // Outports
-    __Signal_one__Entry.SetDouble(Code_Gen_Model_Y.Signal_one);
+    __Motor_DutyCycle__Entry.SetDouble(Code_Gen_Model_Y.Motor_DutyCycle);
     __Signal_two__Entry.SetDouble(Code_Gen_Model_Y.Signal_two);
     // Test Points
     // Tunable Parameters
-    __Auto_Signal_one__Entry.SetDouble(Auto_Signal_one);
     __Auto_Signal_two__Entry.SetDouble(Auto_Signal_two);
     __Teleop_Signal_one__Entry.SetDouble(Teleop_Signal_one);
     __Teleop_Signal_two__Entry.SetDouble(Teleop_Signal_two);

@@ -16,6 +16,6 @@ namespace Names
         };
         static NeoSparkCreateInfo motor = NeoSparkCreateInfo::modifyInfo(MotorCreateInfo,
                                                                              1, // CAN ID
-                                                                             &Code_Gen_Model_Y.DutyCycle);
+                                                                             &Code_Gen_model_Y.Motor_DutyCycle);
 
 };

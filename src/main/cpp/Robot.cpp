@@ -1,6 +1,7 @@
 //local
 #include "include/Robot.h"
 
+
 void Robot::RobotInit()      {Code_Gen_Model_U.GameState = -1; Code_Gen_Model_initialize();}
 void Robot::DisabledInit()   {Code_Gen_Model_U.GameState = 0;}
 void Robot::AutonomousInit() {Code_Gen_Model_U.GameState = 1;}

@@ -7,7 +7,7 @@ Not_Tunable_List = {'t_sample',...
 t_sample = 0.020;
 
 % Parameters
-Auto_Signal_one = 50;
+
 Auto_Signal_two = 60;
 
 Teleop_Signal_one = 10;

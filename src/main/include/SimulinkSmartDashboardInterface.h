@@ -16,15 +16,17 @@ public:
     void PostStepCallback() override;
 private:
         // Parameters
-        nt::NetworkTableEntry __Auto_Signal_one__Entry;
         nt::NetworkTableEntry __Auto_Signal_two__Entry;
         nt::NetworkTableEntry __Teleop_Signal_one__Entry;
         nt::NetworkTableEntry __Teleop_Signal_two__Entry;
  
         // Inports
         nt::NetworkTableEntry __GameState__Entry;
+        nt::NetworkTableEntry __Limit_Switch_Motor_FwdRev__Entry;
+        nt::NetworkTableEntry __Limit_Switch_Motor_OnOff__Entry;
+        nt::NetworkTableEntry __TOF_Distance__Entry;
         // Outports
-        nt::NetworkTableEntry __Signal_one__Entry;
+        nt::NetworkTableEntry __Motor_DutyCycle__Entry;
         nt::NetworkTableEntry __Signal_two__Entry;
  
         // Test Points

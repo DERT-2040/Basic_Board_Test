@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.400
+ * Model version                  : 2.401
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul  3 19:38:37 2025
+ * C/C++ source code generated on : Thu Jul 10 20:01:51 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -33,6 +33,9 @@ real_T Teleop_Signal_two = 20.0;       /* Variable: Teleop_Signal_two
                                         * Referenced by: '<S10>/Constant1'
                                         */
 
+/* Block signals (default storage) */
+B_Code_Gen_Model_T Code_Gen_Model_B;
+
 /* External inputs (root inport signals with default storage) */
 ExtU_Code_Gen_Model_T Code_Gen_Model_U;
 
@@ -47,6 +50,13 @@ RT_MODEL_Code_Gen_Model_T *const Code_Gen_Model_M = &Code_Gen_Model_M_;
 void Code_Gen_Model_step(void)
 {
   real_T tmp;
+
+  /* Sum: '<Root>/Add' incorporates:
+   *  Inport: '<Root>/Motor_Revolutions'
+   *  Inport: '<Root>/Motor_Speed'
+   */
+  Code_Gen_Model_B.Add_tp = Code_Gen_Model_U.Motor_Speed +
+    Code_Gen_Model_U.Motor_Revolutions;
 
   /* SwitchCase: '<S1>/Switch Case' incorporates:
    *  Inport: '<Root>/GameState'

@@ -27,6 +27,8 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
     __GameState__Entry = NTtable_Inport->GetEntry("GameState");
     __Limit_Switch_Motor_FwdRev__Entry = NTtable_Inport->GetEntry("Limit_Switch_Motor_FwdRev");
     __Limit_Switch_Motor_OnOff__Entry = NTtable_Inport->GetEntry("Limit_Switch_Motor_OnOff");
+    __Motor_Revolutions__Entry = NTtable_Inport->GetEntry("Motor_Revolutions");
+    __Motor_Speed__Entry = NTtable_Inport->GetEntry("Motor_Speed");
     __TOF_Distance__Entry = NTtable_Inport->GetEntry("TOF_Distance");
  
 // Outports
@@ -34,6 +36,7 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
     __Signal_two__Entry = NTtable_Outport->GetEntry("Signal_two");
  
 // Test Points
+    __Add_tp__Entry = NTtable_TPoint->GetEntry("Add_tp");
 }
  
 void SimulinkSmartDashboardInterface::PreStepCallback() {}
@@ -44,11 +47,14 @@ void SimulinkSmartDashboardInterface::PostStepCallback()
     __GameState__Entry.SetDouble(Code_Gen_Model_U.GameState);
     __Limit_Switch_Motor_FwdRev__Entry.SetDouble(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev);
     __Limit_Switch_Motor_OnOff__Entry.SetDouble(Code_Gen_Model_U.Limit_Switch_Motor_OnOff);
+    __Motor_Revolutions__Entry.SetDouble(Code_Gen_Model_U.Motor_Revolutions);
+    __Motor_Speed__Entry.SetDouble(Code_Gen_Model_U.Motor_Speed);
     __TOF_Distance__Entry.SetDouble(Code_Gen_Model_U.TOF_Distance);
     // Outports
     __Motor_DutyCycle__Entry.SetDouble(Code_Gen_Model_Y.Motor_DutyCycle);
     __Signal_two__Entry.SetDouble(Code_Gen_Model_Y.Signal_two);
     // Test Points
+    __Add_tp__Entry.SetDouble(Code_Gen_Model_B.Add_tp);
     // Tunable Parameters
     __Auto_Signal_two__Entry.SetDouble(Auto_Signal_two);
     __Teleop_Signal_one__Entry.SetDouble(Teleop_Signal_one);

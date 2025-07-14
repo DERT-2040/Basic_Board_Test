@@ -1,4 +1,4 @@
 See file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
-compiling Robot.cpp successful.
+compiling Input_Output.cpp successful.
 
 Finished compileFrcUserProgramReleaseExecutableFrcUserProgramCpp, see full log file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt.

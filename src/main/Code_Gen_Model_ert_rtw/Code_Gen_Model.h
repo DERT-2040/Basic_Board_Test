@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.400
+ * Model version                  : 2.401
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul  3 19:38:37 2025
+ * C/C++ source code generated on : Thu Jul 10 20:01:51 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -36,12 +36,19 @@
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
 #endif
 
+/* Block signals (default storage) */
+typedef struct {
+  real_T Add_tp;                       /* '<Root>/Add' */
+} B_Code_Gen_Model_T;
+
 /* External inputs (root inport signals with default storage) */
 typedef struct {
   real_T GameState;                    /* '<Root>/GameState' */
   real_T Limit_Switch_Motor_OnOff;     /* '<Root>/Limit_Switch_Motor_OnOff' */
   real_T Limit_Switch_Motor_FwdRev;    /* '<Root>/Limit_Switch_Motor_FwdRev' */
   real_T TOF_Distance;                 /* '<Root>/TOF_Distance' */
+  real_T Motor_Speed;                  /* '<Root>/Motor_Speed' */
+  real_T Motor_Revolutions;            /* '<Root>/Motor_Revolutions' */
 } ExtU_Code_Gen_Model_T;
 
 /* External outputs (root outports fed by signals with default storage) */
@@ -54,6 +61,9 @@ typedef struct {
 struct tag_RTM_Code_Gen_Model_T {
   const char_T * volatile errorStatus;
 };
+
+/* Block signals (default storage) */
+extern B_Code_Gen_Model_T Code_Gen_Model_B;
 
 /* External inputs (root inport signals with default storage) */
 extern ExtU_Code_Gen_Model_T Code_Gen_Model_U;

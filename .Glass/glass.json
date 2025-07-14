@@ -4,6 +4,9 @@
       "open": false
     },
     "transitory": {
+      "Simulink Test Points": {
+        "open": true
+      },
       "Simulink Top Level Ports": {
         "open": true
       },

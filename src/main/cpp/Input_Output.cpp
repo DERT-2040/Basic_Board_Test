@@ -10,6 +10,9 @@ void Input_Output::PreStepCallback()
 
     // Time of Flight sensors
     Code_Gen_Model_U.TOF_Distance = distanceTimeOfFlightSensor.GetRange();
+
+    // NEO Spark Max sensor feedback
+    boardNeoSet.pushData();
 		
 }
 

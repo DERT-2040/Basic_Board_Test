@@ -24,10 +24,13 @@ private:
         nt::NetworkTableEntry __GameState__Entry;
         nt::NetworkTableEntry __Limit_Switch_Motor_FwdRev__Entry;
         nt::NetworkTableEntry __Limit_Switch_Motor_OnOff__Entry;
+        nt::NetworkTableEntry __Motor_Revolutions__Entry;
+        nt::NetworkTableEntry __Motor_Speed__Entry;
         nt::NetworkTableEntry __TOF_Distance__Entry;
         // Outports
         nt::NetworkTableEntry __Motor_DutyCycle__Entry;
         nt::NetworkTableEntry __Signal_two__Entry;
  
         // Test Points
+        nt::NetworkTableEntry __Add_tp__Entry;
 };

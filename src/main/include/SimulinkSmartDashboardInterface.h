@@ -17,7 +17,6 @@ public:
 private:
         // Parameters
         nt::NetworkTableEntry __Auto_Signal_two__Entry;
-        nt::NetworkTableEntry __Teleop_Signal_one__Entry;
         nt::NetworkTableEntry __Teleop_Signal_two__Entry;
  
         // Inports
@@ -33,4 +32,5 @@ private:
  
         // Test Points
         nt::NetworkTableEntry __Add_tp__Entry;
+        nt::NetworkTableEntry __Motor_DutyCycle_Chart__Entry;
 };

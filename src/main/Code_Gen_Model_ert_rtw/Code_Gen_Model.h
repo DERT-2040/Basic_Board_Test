@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.401
+ * Model version                  : 2.402
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul 10 20:01:51 2025
+ * C/C++ source code generated on : Thu Jul 17 20:23:52 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -39,7 +39,17 @@
 /* Block signals (default storage) */
 typedef struct {
   real_T Add_tp;                       /* '<Root>/Add' */
+  real_T Motor_DutyCycle_Chart;        /* '<S10>/Chart' */
 } B_Code_Gen_Model_T;
+
+/* Block states (default storage) for system '<Root>' */
+typedef struct {
+  real_T Prev_State;                   /* '<S10>/Chart' */
+  int8_T SwitchCase_ActiveSubsystem;   /* '<S1>/Switch Case' */
+  uint8_T is_active_c3_Code_Gen_Model; /* '<S10>/Chart' */
+  uint8_T is_c3_Code_Gen_Model;        /* '<S10>/Chart' */
+  uint8_T is_On_State;                 /* '<S10>/Chart' */
+} DW_Code_Gen_Model_T;
 
 /* External inputs (root inport signals with default storage) */
 typedef struct {
@@ -65,6 +75,9 @@ struct tag_RTM_Code_Gen_Model_T {
 /* Block signals (default storage) */
 extern B_Code_Gen_Model_T Code_Gen_Model_B;
 
+/* Block states (default storage) */
+extern DW_Code_Gen_Model_T Code_Gen_Model_DW;
+
 /* External inputs (root inport signals with default storage) */
 extern ExtU_Code_Gen_Model_T Code_Gen_Model_U;
 
@@ -81,9 +94,6 @@ extern ExtY_Code_Gen_Model_T Code_Gen_Model_Y;
  */
 extern real_T Auto_Signal_two;         /* Variable: Auto_Signal_two
                                         * Referenced by: '<S7>/Constant1'
-                                        */
-extern real_T Teleop_Signal_one;       /* Variable: Teleop_Signal_one
-                                        * Referenced by: '<S10>/Constant'
                                         */
 extern real_T Teleop_Signal_two;       /* Variable: Teleop_Signal_two
                                         * Referenced by: '<S10>/Constant1'
@@ -122,6 +132,7 @@ extern RT_MODEL_Code_Gen_Model_T *const Code_Gen_Model_M;
  * '<S8>'   : 'Code_Gen_Model/RoboRio Controls/Autonomous/Autonomous_sub/Compare To Zero'
  * '<S9>'   : 'Code_Gen_Model/RoboRio Controls/Autonomous/Autonomous_sub/Compare To Zero1'
  * '<S10>'  : 'Code_Gen_Model/RoboRio Controls/Teleop/Teleop_sub'
+ * '<S11>'  : 'Code_Gen_Model/RoboRio Controls/Teleop/Teleop_sub/Chart'
  */
 #endif                                 /* RTW_HEADER_Code_Gen_Model_h_ */
 

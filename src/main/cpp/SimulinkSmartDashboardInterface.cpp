@@ -15,10 +15,6 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
     NTinst.AddListener(__Auto_Signal_two__Entry, nt::EventFlags::kValueAll, [] (const nt::Event& event) {Auto_Signal_two = event.GetValueEventData()->value.GetDouble();});
     __Auto_Signal_two__Entry.SetDouble(60);
  
-    __Teleop_Signal_one__Entry = NTtable_Tune->GetEntry("Teleop_Signal_one");
-    NTinst.AddListener(__Teleop_Signal_one__Entry, nt::EventFlags::kValueAll, [] (const nt::Event& event) {Teleop_Signal_one = event.GetValueEventData()->value.GetDouble();});
-    __Teleop_Signal_one__Entry.SetDouble(10);
- 
     __Teleop_Signal_two__Entry = NTtable_Tune->GetEntry("Teleop_Signal_two");
     NTinst.AddListener(__Teleop_Signal_two__Entry, nt::EventFlags::kValueAll, [] (const nt::Event& event) {Teleop_Signal_two = event.GetValueEventData()->value.GetDouble();});
     __Teleop_Signal_two__Entry.SetDouble(20);
@@ -37,6 +33,7 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
  
 // Test Points
     __Add_tp__Entry = NTtable_TPoint->GetEntry("Add_tp");
+    __Motor_DutyCycle___Entry = NTtable_TPoint->GetEntry("Motor_DutyCycle_");
 }
  
 void SimulinkSmartDashboardInterface::PreStepCallback() {}
@@ -55,9 +52,9 @@ void SimulinkSmartDashboardInterface::PostStepCallback()
     __Signal_two__Entry.SetDouble(Code_Gen_Model_Y.Signal_two);
     // Test Points
     __Add_tp__Entry.SetDouble(Code_Gen_Model_B.Add_tp);
+    __Motor_DutyCycle___Entry.SetDouble(Code_Gen_Model_B.Motor_DutyCycle_);
     // Tunable Parameters
     __Auto_Signal_two__Entry.SetDouble(Auto_Signal_two);
-    __Teleop_Signal_one__Entry.SetDouble(Teleop_Signal_one);
     __Teleop_Signal_two__Entry.SetDouble(Teleop_Signal_two);
 }
 // Why are you reading to the bottom of an autogen file?

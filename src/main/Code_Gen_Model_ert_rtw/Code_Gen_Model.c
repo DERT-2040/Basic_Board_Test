@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.403
+ * Model version                  : 2.404
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul 17 19:02:29 2025
+ * C/C++ source code generated on : Thu Jul 24 18:08:14 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -25,8 +25,12 @@
 /* Named constants for Chart: '<S10>/Chart' */
 #define Code_Gen_Mod_IN_NO_ACTIVE_CHILD ((uint8_T)0U)
 #define Code_Gen_Model_IN_Forward      ((uint8_T)1U)
-#define Code_Gen_Model_IN_Off          ((uint8_T)2U)
-#define Code_Gen_Model_IN_Reverse      ((uint8_T)3U)
+#define Code_Gen_Model_IN_Off          ((uint8_T)1U)
+#define Code_Gen_Model_IN_On_State     ((uint8_T)2U)
+#define Code_Gen_Model_IN_Reverse      ((uint8_T)2U)
+#define Code_Gen_Model_IN_Switch       ((uint8_T)3U)
+#define Code_Gen_Model_IN_Turning_Off  ((uint8_T)3U)
+#define Code_Gen_Model_IN_Turning_On   ((uint8_T)4U)
 
 /* Exported block parameters */
 real_T Auto_Signal_two = 60.0;         /* Variable: Auto_Signal_two
@@ -179,6 +183,9 @@ void Code_Gen_Model_step(void)
        */
       Code_Gen_Model_DW.is_active_c3_Code_Gen_Model = 0U;
       Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+      Code_Gen_Model_DW.is_On_State = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+      Code_Gen_Model_B.Motor_DutyCycle = 0.0;
+      Code_Gen_Model_DW.Prev_State = 0.0;
 
       /* End of SystemReset for SubSystem: '<S1>/Teleop' */
     }
@@ -189,90 +196,89 @@ void Code_Gen_Model_step(void)
     /* Chart: '<S10>/Chart' incorporates:
      *  Inport: '<Root>/Limit_Switch_Motor_FwdRev'
      *  Inport: '<Root>/Limit_Switch_Motor_OnOff'
+     *  Inport: '<Root>/TOF_Distance'
      */
     if (Code_Gen_Model_DW.is_active_c3_Code_Gen_Model == 0U) {
       Code_Gen_Model_DW.is_active_c3_Code_Gen_Model = 1U;
       Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Off;
-
-      /* Outport: '<Root>/Motor_DutyCycle' */
-      Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+      Code_Gen_Model_B.Motor_DutyCycle = 0.0;
     } else {
       switch (Code_Gen_Model_DW.is_c3_Code_Gen_Model) {
-       case Code_Gen_Model_IN_Forward:
-        if (!(Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0)) {
-          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Off;
-
-          /* Outport: '<Root>/Motor_DutyCycle' */
-          Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
-        } else if (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0) {
-          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Reverse;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            -300.0;
+       case Code_Gen_Model_IN_Off:
+        if (Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) {
+          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Turning_On;
+          Code_Gen_Model_B.Motor_DutyCycle = 0.0;
         } else {
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            300.0;
+          Code_Gen_Model_B.Motor_DutyCycle = 0.0;
         }
         break;
 
-       case Code_Gen_Model_IN_Off:
-        if ((Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) &&
-            (!(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0))) {
-          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Forward;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            300.0;
-        } else if ((Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) &&
-                   (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0)) {
-          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Reverse;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            -300.0;
+       case Code_Gen_Model_IN_On_State:
+        if (Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) {
+          Code_Gen_Model_DW.is_On_State = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Turning_Off;
+          Code_Gen_Model_B.Motor_DutyCycle = 0.0;
         } else {
-          /* Outport: '<Root>/Motor_DutyCycle' */
-          Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+          switch (Code_Gen_Model_DW.is_On_State) {
+           case Code_Gen_Model_IN_Forward:
+            if (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0) {
+              Code_Gen_Model_DW.is_On_State = Code_Gen_Model_IN_Switch;
+            } else {
+              Code_Gen_Model_B.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
+                300.0;
+            }
+            break;
+
+           case Code_Gen_Model_IN_Reverse:
+            Code_Gen_Model_DW.is_On_State = Code_Gen_Model_IN_Switch;
+            break;
+
+           default:
+            /* case IN_Switch: */
+            if (Code_Gen_Model_DW.Prev_State == 1.0) {
+              Code_Gen_Model_DW.is_On_State = Code_Gen_Model_IN_Reverse;
+              Code_Gen_Model_B.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
+                -300.0;
+              Code_Gen_Model_DW.Prev_State = -1.0;
+            } else if (Code_Gen_Model_DW.Prev_State == -1.0) {
+              Code_Gen_Model_DW.is_On_State = Code_Gen_Model_IN_Forward;
+              Code_Gen_Model_B.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
+                300.0;
+            }
+            break;
+          }
+        }
+        break;
+
+       case Code_Gen_Model_IN_Turning_Off:
+        if (!(Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0)) {
+          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Off;
+          Code_Gen_Model_B.Motor_DutyCycle = 0.0;
+        } else {
+          Code_Gen_Model_B.Motor_DutyCycle = 0.0;
         }
         break;
 
        default:
-        /* case IN_Reverse: */
+        /* case IN_Turning_On: */
         if (!(Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0)) {
-          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Off;
-
-          /* Outport: '<Root>/Motor_DutyCycle' */
-          Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
-        } else if (!(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0)) {
-          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_Forward;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
+          Code_Gen_Model_DW.is_c3_Code_Gen_Model = Code_Gen_Model_IN_On_State;
+          Code_Gen_Model_DW.is_On_State = Code_Gen_Model_IN_Forward;
+          Code_Gen_Model_B.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
             300.0;
         } else {
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            -300.0;
+          Code_Gen_Model_B.Motor_DutyCycle = 0.0;
         }
         break;
       }
     }
 
     /* End of Chart: '<S10>/Chart' */
+
+    /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+     *  SignalConversion generated from: '<S5>/Motor_DutyCycle'
+     */
+    Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_B.Motor_DutyCycle;
 
     /* Outport: '<Root>/Signal_two' incorporates:
      *  Constant: '<S10>/Constant1'

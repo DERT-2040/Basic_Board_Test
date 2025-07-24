@@ -9,7 +9,6 @@ t_sample = 0.020;
 % Parameters
 Auto_Signal_two = 60;
 
-Teleop_Signal_one = 10;
 Teleop_Signal_two = 20;
 
 

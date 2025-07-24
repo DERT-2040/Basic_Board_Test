@@ -1,9 +1,9 @@
-See file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling rtGetNaN.c successful.
-
+See file:///C:/Users/USER/Documents/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
 compiling rtGetInf.c successful.
 
 compiling rt_nonfinite.c successful.
+
+compiling rtGetNaN.c successful.
 
 compiling Code_Gen_Model.c successful.
 
@@ -11,18 +11,33 @@ compiling Component.cpp successful.
 
 compiling Input_Output.cpp successful.
 
+compiling SimulinkSmartDashboardInterface.cpp failed.
+In file included from C:\Users\USER\Documents\Basic_Board_Test\src\main\cpp\SimulinkSmartDashboardInterface.cpp:4:
+C:\Users\USER\Documents\Basic_Board_Test\src\main/include/SimulinkSmartDashboardInterface.h:35:31: error: redeclaration of 'nt::NetworkTableEntry SimulinkSmartDashboardInterface::__Motor_DutyCycle__Entry'
+   35 |         nt::NetworkTableEntry __Motor_DutyCycle__Entry;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\USER\Documents\Basic_Board_Test\src\main/include/SimulinkSmartDashboardInterface.h:30:31: note: previous declaration 'nt::NetworkTableEntry SimulinkSmartDashboardInterface::__Motor_DutyCycle__Entry'
+   30 |         nt::NetworkTableEntry __Motor_DutyCycle__Entry;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+
 compiling NeoSet.cpp successful.
+
+compiling Robot.cpp failed.
+In file included from C:\Users\USER\Documents\Basic_Board_Test\src\main/include/Robot.h:10,
+                 from C:\Users\USER\Documents\Basic_Board_Test\src\main\cpp\Robot.cpp:2:
+C:\Users\USER\Documents\Basic_Board_Test\src\main/include/SimulinkSmartDashboardInterface.h:35:31: error: redeclaration of 'nt::NetworkTableEntry SimulinkSmartDashboardInterface::__Motor_DutyCycle__Entry'
+   35 |         nt::NetworkTableEntry __Motor_DutyCycle__Entry;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\USER\Documents\Basic_Board_Test\src\main/include/SimulinkSmartDashboardInterface.h:30:31: note: previous declaration 'nt::NetworkTableEntry SimulinkSmartDashboardInterface::__Motor_DutyCycle__Entry'
+   30 |         nt::NetworkTableEntry __Motor_DutyCycle__Entry;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
 
 compiling NeoSpark.cpp successful.
 
-compiling SimulinkSmartDashboardInterface.cpp successful.
-
 compiling Chooser.cpp successful.
-
-compiling Robot.cpp successful.
-
-compiling KrakenSet.cpp successful.
 
 compiling KrakenTalon.cpp successful.
 
-Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/GitHub/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.
+compiling KrakenSet.cpp successful.
+
+Finished compileFrcUserProgramDebugExecutableFrcUserProgramCpp, see full log file:///C:/Users/USER/Documents/Basic_Board_Test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt.

@@ -19,14 +19,6 @@
 %function GlobalMachineInitializer(block) void
   %openfile tmpFcnBuf
   %<DumpMachineInitializer(block)>\
-  %if FILE_EXISTS("Controls_Components_lib_rtw.tlc")
-    %generatefile "machineSource" "Controls_Components_lib_rtw.tlc"
-    %<GENERATE_TYPE(block,"DumpMachineInitializer","machineSource")>\
-  %endif
-  %if FILE_EXISTS("ctrlSharedLib_rtw.tlc")
-    %generatefile "machineSource" "ctrlSharedLib_rtw.tlc"
-    %<GENERATE_TYPE(block,"DumpMachineInitializer","machineSource")>\
-  %endif
   %closefile tmpFcnBuf
   %return tmpFcnBuf              
 %endfunction %% GlobalMachineInitializer
@@ -44,10 +36,6 @@
 %function GlobalMachineTerminator(block) void
   %openfile tmpFcnBuf
   %<DumpMachineTerminator(block)>\
-  %generatefile "machineSource" "Controls_Components_lib_rtw.tlc"
-  %<GENERATE_TYPE(block,"DumpMachineTerminator","machineSource")>\
-  %generatefile "machineSource" "ctrlSharedLib_rtw.tlc"
-  %<GENERATE_TYPE(block,"DumpMachineTerminator","machineSource")>\
   %closefile tmpFcnBuf
   %return tmpFcnBuf              
 %endfunction %% GlobalMachineTerminator

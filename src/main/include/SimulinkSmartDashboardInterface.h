@@ -17,7 +17,6 @@ public:
 private:
         // Parameters
         nt::NetworkTableEntry __Auto_Signal_two__Entry;
-        nt::NetworkTableEntry __Teleop_Signal_one__Entry;
         nt::NetworkTableEntry __Teleop_Signal_two__Entry;
  
         // Inports

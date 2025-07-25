@@ -7,17 +7,17 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   4 \
+    NumChartData   5 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
     }\
     ChartData {\
-      Name         "Prev_State"\
+      Name         "Count"\
       Description  "ChartLocal"\
       SFName       ""\
-      Path         "Prev_State"\
+      Path         "Count"\
       SrcLocation  ""\
     }\
     ChartData {\
@@ -35,10 +35,17 @@
       SrcLocation  ""\
     }\
     ChartData {\
-      Name         "is_On_State"\
+      Name         "is_Negative"\
       Description  "StateActiveChild"\
       SFName       ""\
-      Path         "On_State"\
+      Path         "Negative"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Positive"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Positive"\
       SrcLocation  ""\
     }\
   }

@@ -3,7 +3,7 @@
     "type": "native",
     "name": "frcCpp",
     "port": 8349,
-    "target": "172.22.11.2",
+    "target": "roborio-2040-FRC.local",
     "launchfile": "C:\\Users\\FIRSTMentor\\Documents\\2025_Training\\Basic_Board_Test\\build\\exe\\frcUserProgram\\release\\frcUserProgram",
     "gdb": "C:\\Users\\Public\\wpilib\\2025\\roborio\\bin\\arm-frc2025-linux-gnueabi-gdb.exe",
     "sysroot": "C:\\Users\\Public\\wpilib\\2025\\roborio",

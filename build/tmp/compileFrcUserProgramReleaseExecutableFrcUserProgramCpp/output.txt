@@ -7,19 +7,19 @@ compiling rt_nonfinite.c successful.
 
 compiling Input_Output.cpp successful.
 
-compiling Component.cpp successful.
-
 compiling SimulinkSmartDashboardInterface.cpp successful.
-
-compiling Robot.cpp successful.
-
-compiling rtGetInf.c successful.
 
 compiling Chooser.cpp successful.
 
-compiling NeoSet.cpp successful.
+compiling rtGetInf.c successful.
+
+compiling Robot.cpp successful.
+
+compiling Component.cpp successful.
 
 compiling NeoSpark.cpp successful.
+
+compiling NeoSet.cpp successful.
 
 compiling KrakenSet.cpp successful.
 

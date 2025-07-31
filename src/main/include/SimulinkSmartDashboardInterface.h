@@ -32,4 +32,5 @@ private:
  
         // Test Points
         nt::NetworkTableEntry __Add_tp__Entry;
+        nt::NetworkTableEntry __Motor_DutyCycle_Out__Entry;
 };

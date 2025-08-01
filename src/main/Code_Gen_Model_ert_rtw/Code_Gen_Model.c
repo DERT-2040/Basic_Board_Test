@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.407
+ * Model version                  : 2.408
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul 31 18:58:02 2025
+ * C/C++ source code generated on : Thu Jul 31 19:54:02 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -59,7 +59,7 @@ RT_MODEL_Code_Gen_Model_T *const Code_Gen_Model_M = &Code_Gen_Model_M_;
 /* Model step function */
 void Code_Gen_Model_step(void)
 {
-  real_T tmp;
+  real_T rtb_Add;
   int8_T rtAction;
   int8_T rtPrevAction;
 
@@ -74,15 +74,15 @@ void Code_Gen_Model_step(void)
    *  Inport: '<Root>/GameState'
    */
   rtPrevAction = Code_Gen_Model_DW.SwitchCase_ActiveSubsystem;
-  tmp = trunc(Code_Gen_Model_U.GameState);
-  if ((rtIsNaN(tmp)) || (rtIsInf(tmp))) {
-    tmp = 0.0;
+  rtb_Add = trunc(Code_Gen_Model_U.GameState);
+  if ((rtIsNaN(rtb_Add)) || (rtIsInf(rtb_Add))) {
+    rtb_Add = 0.0;
   } else {
-    tmp = fmod(tmp, 4.294967296E+9);
+    rtb_Add = fmod(rtb_Add, 4.294967296E+9);
   }
 
-  switch ((tmp < 0.0) ? (-((int32_T)((uint32_T)(-tmp)))) : ((int32_T)((uint32_T)
-            tmp))) {
+  switch ((rtb_Add < 0.0) ? (-((int32_T)((uint32_T)(-rtb_Add)))) : ((int32_T)
+           ((uint32_T)rtb_Add))) {
    case 0:
     rtAction = 0;
     break;
@@ -194,6 +194,27 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Teleop' incorporates:
      *  ActionPort: '<S5>/Action Port'
      */
+    /* Product: '<S10>/Divide' incorporates:
+     *  Constant: '<S10>/Constant'
+     *  Inport: '<Root>/TOF_Distance'
+     */
+    rtb_Add = Code_Gen_Model_U.TOF_Distance / 300.0;
+
+    /* Saturate: '<S10>/Saturation' */
+    if (rtb_Add > 1.0) {
+      rtb_Add = 1.0;
+    } else if (rtb_Add < 0.0) {
+      rtb_Add = 0.0;
+    }
+
+    /* Sum: '<S10>/Add' incorporates:
+     *  Constant: '<S10>/Constant2'
+     *  Constant: '<S10>/CycleTime'
+     *  Product: '<S10>/Product'
+     *  Saturate: '<S10>/Saturation'
+     */
+    rtb_Add = (4.0 * rtb_Add) + 1.0;
+
     /* Chart: '<S10>/Chart1' incorporates:
      *  Inport: '<Root>/Limit_Switch_Motor_FwdRev'
      *  Inport: '<Root>/Limit_Switch_Motor_OnOff'
@@ -218,7 +239,7 @@ void Code_Gen_Model_step(void)
           Code_Gen_Model_DW.Count = 0.0;
         } else {
           Code_Gen_Model_B.Motor_DutyCycle_Out = -(Code_Gen_Model_DW.Count /
-            25.0);
+            (rtb_Add * 25.0));
           if (Code_Gen_Model_DW.is_Negative == Code_Gen_Model_IN_Negative_Down)
           {
             if (Code_Gen_Model_DW.Count == 0.0) {
@@ -229,9 +250,9 @@ void Code_Gen_Model_step(void)
             }
 
             /* case IN_Negative_Up: */
-          } else if (Code_Gen_Model_DW.Count == 25.0) {
+          } else if (Code_Gen_Model_DW.Count >= (rtb_Add * 25.0)) {
             Code_Gen_Model_DW.is_Negative = Code_Gen_Model_IN_Negative_Down;
-            Code_Gen_Model_DW.Count = 24.0;
+            Code_Gen_Model_DW.Count--;
           } else {
             Code_Gen_Model_DW.Count++;
           }
@@ -262,7 +283,8 @@ void Code_Gen_Model_step(void)
           Code_Gen_Model_B.Motor_DutyCycle_Out = 0.0;
           Code_Gen_Model_DW.Count = 0.0;
         } else {
-          Code_Gen_Model_B.Motor_DutyCycle_Out = Code_Gen_Model_DW.Count / 25.0;
+          Code_Gen_Model_B.Motor_DutyCycle_Out = Code_Gen_Model_DW.Count /
+            (rtb_Add * 25.0);
           if (Code_Gen_Model_DW.is_Positive == Code_Gen_Model_IN_Positive_Down)
           {
             if (Code_Gen_Model_DW.Count == 0.0) {
@@ -273,9 +295,9 @@ void Code_Gen_Model_step(void)
             }
 
             /* case IN_Positive_Up: */
-          } else if (Code_Gen_Model_DW.Count == 25.0) {
+          } else if (Code_Gen_Model_DW.Count >= (rtb_Add * 25.0)) {
             Code_Gen_Model_DW.is_Positive = Code_Gen_Model_IN_Positive_Down;
-            Code_Gen_Model_DW.Count = 24.0;
+            Code_Gen_Model_DW.Count--;
           } else {
             Code_Gen_Model_DW.Count++;
           }

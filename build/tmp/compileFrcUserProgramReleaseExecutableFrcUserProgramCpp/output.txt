@@ -1,9 +1,9 @@
 See file:///C:/GitHub/basic_board_test/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
 compiling rtGetNaN.c successful.
 
-compiling rtGetInf.c successful.
-
 compiling rt_nonfinite.c successful.
+
+compiling rtGetInf.c successful.
 
 compiling Code_Gen_Model.c successful.
 

@@ -1,7 +1,7 @@
 See file:///C:/GitHub/basic_board_test/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling rtGetNaN.c successful.
-
 compiling rtGetInf.c successful.
+
+compiling rtGetNaN.c successful.
 
 compiling rt_nonfinite.c successful.
 

@@ -33,7 +33,7 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
  
 // Test Points
     __Add_tp__Entry = NTtable_TPoint->GetEntry("Add_tp");
-    __Motor_DutyCycle__Entry = NTtable_TPoint->GetEntry("Motor_DutyCycle");
+    __Motor_DutyCycle_Out__Entry = NTtable_TPoint->GetEntry("Motor_DutyCycle_Out");
 }
  
 void SimulinkSmartDashboardInterface::PreStepCallback() {}
@@ -52,7 +52,7 @@ void SimulinkSmartDashboardInterface::PostStepCallback()
     __Signal_two__Entry.SetDouble(Code_Gen_Model_Y.Signal_two);
     // Test Points
     __Add_tp__Entry.SetDouble(Code_Gen_Model_B.Add_tp);
-    __Motor_DutyCycle__Entry.SetDouble(Code_Gen_Model_B.Motor_DutyCycle);
+    __Motor_DutyCycle_Out__Entry.SetDouble(Code_Gen_Model_B.Motor_DutyCycle_Out);
     // Tunable Parameters
     __Auto_Signal_two__Entry.SetDouble(Auto_Signal_two);
     __Teleop_Signal_two__Entry.SetDouble(Teleop_Signal_two);

@@ -1,9 +1,9 @@
 See file:///C:/Users/Blank/Documents/DERT2040/GithubRepos/Basic_Board_Test/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
-compiling rt_nonfinite.c successful.
-
 compiling rtGetInf.c successful.
 
 compiling rtGetNaN.c successful.
+
+compiling rt_nonfinite.c successful.
 
 compiling Code_Gen_Model.c successful.
 

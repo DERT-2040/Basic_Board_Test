@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.403
+ * Model version                  : 2.404
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul 24 20:14:30 2025
+ * C/C++ source code generated on : Thu Jul 31 20:12:27 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -39,6 +39,7 @@
 /* Block signals (default storage) */
 typedef struct {
   real_T Add_tp;                       /* '<Root>/Add' */
+  real_T Cycle_Time_Test;              /* '<S10>/Add' */
 } B_Code_Gen_Model_T;
 
 /* Block states (default storage) for system '<Root>' */

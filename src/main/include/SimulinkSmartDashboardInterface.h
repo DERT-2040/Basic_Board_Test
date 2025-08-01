@@ -32,4 +32,5 @@ private:
  
         // Test Points
         nt::NetworkTableEntry __Add_tp__Entry;
+        nt::NetworkTableEntry __Cycle_Time_Test__Entry;
 };

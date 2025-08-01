@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.409
+ * Model version                  : 2.413
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul 17 20:28:44 2025
+ * C/C++ source code generated on : Thu Jul 31 19:53:45 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -39,16 +39,17 @@
 /* Block signals (default storage) */
 typedef struct {
   real_T Add_tp;                       /* '<Root>/Add' */
-  real_T Motor_DutyCycle_;             /* '<S10>/Chart' */
+  real_T Motor_DutyCycle_out;          /* '<S10>/Chart' */
 } B_Code_Gen_Model_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real_T Prev_State;                   /* '<S10>/Chart' */
+  real_T Count;                        /* '<S10>/Chart' */
   int8_T SwitchCase_ActiveSubsystem;   /* '<S1>/Switch Case' */
   uint8_T is_active_c3_Code_Gen_Model; /* '<S10>/Chart' */
   uint8_T is_c3_Code_Gen_Model;        /* '<S10>/Chart' */
-  uint8_T is_On_State;                 /* '<S10>/Chart' */
+  uint8_T is_Negative;                 /* '<S10>/Chart' */
+  uint8_T is_Positive;                 /* '<S10>/Chart' */
 } DW_Code_Gen_Model_T;
 
 /* External inputs (root inport signals with default storage) */

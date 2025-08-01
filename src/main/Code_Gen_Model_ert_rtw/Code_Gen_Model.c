@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.403
+ * Model version                  : 2.406
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu Jul 17 19:02:16 2025
+ * C/C++ source code generated on : Thu Jul 31 19:53:46 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -24,9 +24,13 @@
 
 /* Named constants for Chart: '<S10>/Chart1' */
 #define Code_Gen_Mod_IN_NO_ACTIVE_CHILD ((uint8_T)0U)
-#define Code_Gen_Model_IN_Forward      ((uint8_T)1U)
+#define Code_Gen_Model_IN_Negative     ((uint8_T)1U)
+#define Code_Gen_Model_IN_Negative_Down ((uint8_T)1U)
+#define Code_Gen_Model_IN_Negative_Up  ((uint8_T)2U)
 #define Code_Gen_Model_IN_Off          ((uint8_T)2U)
-#define Code_Gen_Model_IN_Reverse      ((uint8_T)3U)
+#define Code_Gen_Model_IN_Positive     ((uint8_T)3U)
+#define Code_Gen_Model_IN_Positive_Down ((uint8_T)1U)
+#define Code_Gen_Model_IN_Positive_Up  ((uint8_T)2U)
 
 /* Exported block parameters */
 real_T Auto_Signal_two = 60.0;         /* Variable: Auto_Signal_two
@@ -55,7 +59,8 @@ RT_MODEL_Code_Gen_Model_T *const Code_Gen_Model_M = &Code_Gen_Model_M_;
 /* Model step function */
 void Code_Gen_Model_step(void)
 {
-  real_T tmp;
+  real_T rtb_Merge;
+  real_T rtb_Merge1;
   int8_T rtAction;
   int8_T rtPrevAction;
 
@@ -70,15 +75,15 @@ void Code_Gen_Model_step(void)
    *  Inport: '<Root>/GameState'
    */
   rtPrevAction = Code_Gen_Model_DW.SwitchCase_ActiveSubsystem;
-  tmp = trunc(Code_Gen_Model_U.GameState);
-  if ((rtIsNaN(tmp)) || (rtIsInf(tmp))) {
-    tmp = 0.0;
+  rtb_Merge = trunc(Code_Gen_Model_U.GameState);
+  if ((rtIsNaN(rtb_Merge)) || (rtIsInf(rtb_Merge))) {
+    rtb_Merge = 0.0;
   } else {
-    tmp = fmod(tmp, 4.294967296E+9);
+    rtb_Merge = fmod(rtb_Merge, 4.294967296E+9);
   }
 
-  switch ((tmp < 0.0) ? (-((int32_T)((uint32_T)(-tmp)))) : ((int32_T)((uint32_T)
-            tmp))) {
+  switch ((rtb_Merge < 0.0) ? (-((int32_T)((uint32_T)(-rtb_Merge)))) : ((int32_T)
+           ((uint32_T)rtb_Merge))) {
    case 0:
     rtAction = 0;
     break;
@@ -102,17 +107,15 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Disabled' incorporates:
      *  ActionPort: '<S3>/Action Port'
      */
-    /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+    /* SignalConversion generated from: '<S3>/Motor_DutyCycle' incorporates:
      *  Constant: '<S3>/Constant'
-     *  SignalConversion generated from: '<S3>/Motor_DutyCycle'
      */
-    Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+    rtb_Merge = 0.0;
 
-    /* Outport: '<Root>/Signal_two' incorporates:
+    /* SignalConversion generated from: '<S3>/Signal_two' incorporates:
      *  Constant: '<S3>/Constant1'
-     *  SignalConversion generated from: '<S3>/Signal_two'
      */
-    Code_Gen_Model_Y.Signal_two = 0.0;
+    rtb_Merge1 = 0.0;
 
     /* End of Outputs for SubSystem: '<S1>/Disabled' */
     break;
@@ -122,49 +125,38 @@ void Code_Gen_Model_step(void)
      *  ActionPort: '<S2>/Action Port'
      */
     /* Switch: '<S7>/Switch' incorporates:
+     *  Constant: '<S7>/Constant3'
      *  Constant: '<S8>/Constant'
      *  Inport: '<Root>/Limit_Switch_Motor_OnOff'
      *  RelationalOperator: '<S8>/Compare'
      */
     if (Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) {
       /* Switch: '<S7>/Switch1' incorporates:
+       *  Constant: '<S7>/Constant'
        *  Constant: '<S9>/Constant'
        *  Inport: '<Root>/Limit_Switch_Motor_FwdRev'
+       *  Inport: '<Root>/TOF_Distance'
+       *  Product: '<S7>/Divide'
        *  RelationalOperator: '<S9>/Compare'
+       *  UnaryMinus: '<S7>/Unary Minus'
        */
       if (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0) {
-        /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-         *  Constant: '<S7>/Constant'
-         *  Inport: '<Root>/TOF_Distance'
-         *  Product: '<S7>/Divide'
-         *  UnaryMinus: '<S7>/Unary Minus'
-         */
-        Code_Gen_Model_Y.Motor_DutyCycle = -(Code_Gen_Model_U.TOF_Distance /
-          300.0);
+        rtb_Merge = -(Code_Gen_Model_U.TOF_Distance / 300.0);
       } else {
-        /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-         *  Constant: '<S7>/Constant'
-         *  Inport: '<Root>/TOF_Distance'
-         *  Product: '<S7>/Divide'
-         */
-        Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance / 300.0;
+        rtb_Merge = Code_Gen_Model_U.TOF_Distance / 300.0;
       }
 
       /* End of Switch: '<S7>/Switch1' */
     } else {
-      /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-       *  Constant: '<S7>/Constant3'
-       */
-      Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+      rtb_Merge = 0.0;
     }
 
     /* End of Switch: '<S7>/Switch' */
 
-    /* Outport: '<Root>/Signal_two' incorporates:
+    /* SignalConversion generated from: '<S2>/Signal_two' incorporates:
      *  Constant: '<S7>/Constant1'
-     *  SignalConversion generated from: '<S2>/Signal_two'
      */
-    Code_Gen_Model_Y.Signal_two = Auto_Signal_two;
+    rtb_Merge1 = Auto_Signal_two;
 
     /* End of Outputs for SubSystem: '<S1>/Autonomous' */
     break;
@@ -179,6 +171,10 @@ void Code_Gen_Model_step(void)
        */
       Code_Gen_Model_DW.is_active_c1_Code_Gen_Model = 0U;
       Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+      Code_Gen_Model_DW.is_Negative = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+      Code_Gen_Model_DW.is_Positive = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+      Code_Gen_Model_B.Motor_DutyCycle_Out = 0.0;
+      Code_Gen_Model_DW.Count = 0.0;
 
       /* End of SystemReset for SubSystem: '<S1>/Teleop' */
     }
@@ -186,6 +182,27 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Teleop' incorporates:
      *  ActionPort: '<S5>/Action Port'
      */
+    /* Product: '<S10>/Divide' incorporates:
+     *  Constant: '<S10>/Constant'
+     *  Inport: '<Root>/TOF_Distance'
+     */
+    rtb_Merge = Code_Gen_Model_U.TOF_Distance / 300.0;
+
+    /* Saturate: '<S10>/Saturation' */
+    if (rtb_Merge > 1.0) {
+      rtb_Merge = 1.0;
+    } else if (rtb_Merge < 0.0) {
+      rtb_Merge = 0.0;
+    }
+
+    /* Sum: '<S10>/Add' incorporates:
+     *  Constant: '<S10>/Constant2'
+     *  Constant: '<S10>/CycleTime'
+     *  Product: '<S10>/Product'
+     *  Saturate: '<S10>/Saturation'
+     */
+    Code_Gen_Model_B.Cycle_Time = (4.0 * rtb_Merge) + 1.0;
+
     /* Chart: '<S10>/Chart1' incorporates:
      *  Inport: '<Root>/Limit_Switch_Motor_FwdRev'
      *  Inport: '<Root>/Limit_Switch_Motor_OnOff'
@@ -193,80 +210,93 @@ void Code_Gen_Model_step(void)
     if (Code_Gen_Model_DW.is_active_c1_Code_Gen_Model == 0U) {
       Code_Gen_Model_DW.is_active_c1_Code_Gen_Model = 1U;
       Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Off;
-
-      /* Outport: '<Root>/Motor_DutyCycle' */
-      Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+      Code_Gen_Model_B.Motor_DutyCycle_Out = 0.0;
+      Code_Gen_Model_DW.Count = 0.0;
     } else {
       switch (Code_Gen_Model_DW.is_c1_Code_Gen_Model) {
-       case Code_Gen_Model_IN_Forward:
+       case Code_Gen_Model_IN_Negative:
         if (!(Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0)) {
+          Code_Gen_Model_DW.is_Negative = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
           Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Off;
-
-          /* Outport: '<Root>/Motor_DutyCycle' */
-          Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
-        } else if (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0) {
-          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Reverse;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            -300.0;
+          Code_Gen_Model_B.Motor_DutyCycle_Out = 0.0;
+          Code_Gen_Model_DW.Count = 0.0;
+        } else if (!(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0)) {
+          Code_Gen_Model_DW.is_Negative = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Positive;
+          Code_Gen_Model_DW.is_Positive = Code_Gen_Model_IN_Positive_Up;
+          Code_Gen_Model_DW.Count = 1.0;
         } else {
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            300.0;
+          Code_Gen_Model_B.Motor_DutyCycle_Out = -(Code_Gen_Model_DW.Count /
+            (Code_Gen_Model_B.Cycle_Time * 25.0));
+          if (Code_Gen_Model_DW.is_Negative == Code_Gen_Model_IN_Negative_Down)
+          {
+            if (Code_Gen_Model_DW.Count == 0.0) {
+              Code_Gen_Model_DW.is_Negative = Code_Gen_Model_IN_Negative_Up;
+              Code_Gen_Model_DW.Count = 1.0;
+            } else {
+              Code_Gen_Model_DW.Count--;
+            }
+
+            /* case IN_Negative_Up: */
+          } else if (Code_Gen_Model_DW.Count >= (Code_Gen_Model_B.Cycle_Time *
+                      25.0)) {
+            Code_Gen_Model_DW.is_Negative = Code_Gen_Model_IN_Negative_Down;
+            Code_Gen_Model_DW.Count--;
+          } else {
+            Code_Gen_Model_DW.Count++;
+          }
         }
         break;
 
        case Code_Gen_Model_IN_Off:
         if ((Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) &&
-            (!(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0))) {
-          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Forward;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            300.0;
+            (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0)) {
+          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Negative;
+          Code_Gen_Model_DW.is_Negative = Code_Gen_Model_IN_Negative_Up;
+          Code_Gen_Model_DW.Count = 1.0;
         } else if ((Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0) &&
-                   (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0)) {
-          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Reverse;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            -300.0;
+                   (!(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0))) {
+          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Positive;
+          Code_Gen_Model_DW.is_Positive = Code_Gen_Model_IN_Positive_Up;
+          Code_Gen_Model_DW.Count = 1.0;
         } else {
-          /* Outport: '<Root>/Motor_DutyCycle' */
-          Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+          Code_Gen_Model_B.Motor_DutyCycle_Out = 0.0;
+          Code_Gen_Model_DW.Count = 0.0;
         }
         break;
 
        default:
-        /* case IN_Reverse: */
+        /* case IN_Positive: */
         if (!(Code_Gen_Model_U.Limit_Switch_Motor_OnOff != 0.0)) {
+          Code_Gen_Model_DW.is_Positive = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
           Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Off;
-
-          /* Outport: '<Root>/Motor_DutyCycle' */
-          Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
-        } else if (!(Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0)) {
-          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Forward;
-
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            300.0;
+          Code_Gen_Model_B.Motor_DutyCycle_Out = 0.0;
+          Code_Gen_Model_DW.Count = 0.0;
+        } else if (Code_Gen_Model_U.Limit_Switch_Motor_FwdRev != 0.0) {
+          Code_Gen_Model_DW.is_Positive = Code_Gen_Mod_IN_NO_ACTIVE_CHILD;
+          Code_Gen_Model_DW.is_c1_Code_Gen_Model = Code_Gen_Model_IN_Negative;
+          Code_Gen_Model_DW.is_Negative = Code_Gen_Model_IN_Negative_Up;
+          Code_Gen_Model_DW.Count = 1.0;
         } else {
-          /* Outport: '<Root>/Motor_DutyCycle' incorporates:
-           *  Inport: '<Root>/TOF_Distance'
-           */
-          Code_Gen_Model_Y.Motor_DutyCycle = Code_Gen_Model_U.TOF_Distance /
-            -300.0;
+          Code_Gen_Model_B.Motor_DutyCycle_Out = Code_Gen_Model_DW.Count /
+            (Code_Gen_Model_B.Cycle_Time * 25.0);
+          if (Code_Gen_Model_DW.is_Positive == Code_Gen_Model_IN_Positive_Down)
+          {
+            if (Code_Gen_Model_DW.Count == 0.0) {
+              Code_Gen_Model_DW.is_Positive = Code_Gen_Model_IN_Positive_Up;
+              Code_Gen_Model_DW.Count = 1.0;
+            } else {
+              Code_Gen_Model_DW.Count--;
+            }
+
+            /* case IN_Positive_Up: */
+          } else if (Code_Gen_Model_DW.Count >= (Code_Gen_Model_B.Cycle_Time *
+                      25.0)) {
+            Code_Gen_Model_DW.is_Positive = Code_Gen_Model_IN_Positive_Down;
+            Code_Gen_Model_DW.Count--;
+          } else {
+            Code_Gen_Model_DW.Count++;
+          }
         }
         break;
       }
@@ -274,11 +304,13 @@ void Code_Gen_Model_step(void)
 
     /* End of Chart: '<S10>/Chart1' */
 
-    /* Outport: '<Root>/Signal_two' incorporates:
+    /* SignalConversion generated from: '<S5>/Motor_DutyCycle' */
+    rtb_Merge = Code_Gen_Model_B.Motor_DutyCycle_Out;
+
+    /* SignalConversion generated from: '<S5>/Signal_two' incorporates:
      *  Constant: '<S10>/Constant1'
-     *  SignalConversion generated from: '<S5>/Signal_two'
      */
-    Code_Gen_Model_Y.Signal_two = Teleop_Signal_two;
+    rtb_Merge1 = Teleop_Signal_two;
 
     /* End of Outputs for SubSystem: '<S1>/Teleop' */
     break;
@@ -287,23 +319,27 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Test' incorporates:
      *  ActionPort: '<S6>/Action Port'
      */
-    /* Outport: '<Root>/Motor_DutyCycle' incorporates:
+    /* SignalConversion generated from: '<S6>/Motor_DutyCycle' incorporates:
      *  Constant: '<S6>/Constant'
-     *  SignalConversion generated from: '<S6>/Motor_DutyCycle'
      */
-    Code_Gen_Model_Y.Motor_DutyCycle = 0.0;
+    rtb_Merge = 0.0;
 
-    /* Outport: '<Root>/Signal_two' incorporates:
+    /* SignalConversion generated from: '<S6>/Signal_two' incorporates:
      *  Constant: '<S6>/Constant1'
-     *  SignalConversion generated from: '<S6>/Signal_two'
      */
-    Code_Gen_Model_Y.Signal_two = 0.0;
+    rtb_Merge1 = 0.0;
 
     /* End of Outputs for SubSystem: '<S1>/Test' */
     break;
   }
 
   /* End of SwitchCase: '<S1>/Switch Case' */
+
+  /* Outport: '<Root>/Motor_DutyCycle' */
+  Code_Gen_Model_Y.Motor_DutyCycle = rtb_Merge;
+
+  /* Outport: '<Root>/Signal_two' */
+  Code_Gen_Model_Y.Signal_two = rtb_Merge1;
 }
 
 /* Model initialize function */

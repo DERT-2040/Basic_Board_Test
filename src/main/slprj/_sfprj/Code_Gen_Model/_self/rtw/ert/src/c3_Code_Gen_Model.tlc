@@ -7,11 +7,18 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   2 \
+    NumChartData   5 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "Count"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Count"\
+      SrcLocation  ""\
     }\
     ChartData {\
       Name         "is_active_c3_Code_Gen_Model"\
@@ -25,6 +32,20 @@
       Description  "StateActiveChild"\
       SFName       ""\
       Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Negative"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Negative"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Positive"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Positive"\
       SrcLocation  ""\
     }\
   }
